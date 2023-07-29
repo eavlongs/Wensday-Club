@@ -2,7 +2,7 @@
 
 import Image from "next/image"
 import { useState } from "react"
-import Button from "../components/Button"
+
 
 export default function Home() {
     const [active, setActive] = useState(1)
