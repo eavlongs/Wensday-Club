@@ -3,17 +3,10 @@
 import Image from "next/image"
 import { useState } from "react"
 
-import './globals.css'
-import type { Metadata } from 'next'
+import '../globals.css'
 import { Inter } from 'next/font/google'
 
 const inter = Inter({ subsets: ['latin'] })
-
-export const metadata: Metadata = {
-    title: 'Wensday Club',
-    description: 'Join Wensday Club today',
-    viewport: "width=device-width, initial-scale=1",
-}
 
 export default function RootLayout({
   children,
