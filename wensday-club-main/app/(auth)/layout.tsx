@@ -16,6 +16,9 @@ export default function RootLayout({
   const [active, setActive] = useState(1)
   return (
     <html lang="en">
+      <head>
+    <script src="https://kit.fontawesome.com/bc3caf0f25.js" crossOrigin="anonymous"></script>
+  </head>
       <body className="flex-center">
         <main className="max-w-[1500px] w-[90%]">
           <div className="flex">
