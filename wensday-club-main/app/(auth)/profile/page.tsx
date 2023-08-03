@@ -45,8 +45,8 @@ export default function Page(){
                 </button>
                 </div>
             </div>
-            <div className='w-[1200px] h-[900px] border-black bg-blue-300 pt-6 pl-6 flex'>
-                <div className='w-[400px] h-[400px] bg-green-300 pt-6 pl-6'>
+            <div className='w-[1200px] h-[900px] border-black  pt-6 pl-6 flex'>
+                <div className='w-[400px] h-[400px]  pt-6 pl-6 border-2 border-gray-700 rounded-xl'>
                 <div className= "w-[200px] h-[40px] bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-3 rounded-full font-bold text-xl text-center">
                         About Me
                 </div>
@@ -71,8 +71,8 @@ export default function Page(){
                 </div>
                 </div>
                 </div>
-                <div className="somthing-to-say w-[900px] h-[130px] bg-red-300 ml-[30px] flex">
-                    <div className='font-bold text-2xl text-gray-200 pt-4 pb-4'>
+                <div className="somthing-to-say w-[900px] h-[130px] ml-[30px] flex">
+                    <div className='font-bold text-2xl text-gray-500 pt-4 pb-4'>
                     <p>Something to say...?</p>
                     </div>
                     <div className="post pt-4 pb-4 pl-[270px]">
