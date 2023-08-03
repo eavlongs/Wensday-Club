@@ -9,7 +9,8 @@ export default function Page(){
                         alt="image description"
                         />
                 </div>
-            <div className='under_cover cover w-[990px] h-[200px] bg-red-500 ml-52 flex items-start' >
+            <div className='under_cover cover w-[990px] h-[200px] ml-52 flex items-start' >
+                
                 <div className="max-w-[150px] max-h-[150px] w-[calc(6rem+6vw)] h-[calc(6rem+6vw)] relative">
                     <Image
                         src="/Olivier_1500_Trptch.jpg"
@@ -25,15 +26,27 @@ export default function Page(){
                         <h1>Yilong Ma</h1>
                     </div>
                     
-                <div className='followers w-[1200px] h-[30px] flex items-strech text-xl'>
-                    <button className='pl-6'>12 posts</button>
-                    <button className='pl-24'>100k followers</button>
-                    <button className='pl-24'>2 followings</button>
+                <div className='followers w-[1200px] h-[30px] flex items-strech text-xl '>
+                    <button className='pl-6 hover:text-sky-700'><a href="">12 posts</a></button>
+                    <button className='pl-24 hover:text-sky-700'><a href="">100k followers</a> </button>
+                    <button className='pl-24 hover:text-sky-700'><a href="">2 followings</a></button>
+                    
                 </div>
+               
                 </div>
-                <button className="bg-green-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full">
-                         Edit
+                
+               
+                </div>
+                
+                <div className="pt-4 pb-4 pl-[400px]">
+                <button className= "w-[150px] bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full">
+                        <a href="/">Edit</a> 
                 </button>
+                </div>
+            </div>
+            <div className='w-[1200px] h-[900px] border-black bg-blue-300 pt-6 pl-6'>
+                <div className='w-[400px] h-[400px] bg-green-300 font-bold text-2xl '>
+                    About Me
                 </div>
             </div>
         </>
