@@ -19,18 +19,21 @@ export default function Page(){
                         className="rounded-[50%] my-5"
                     />
                 </div>
-                <div className='user_info w-[150px] h-[150px] my-5'>
-
-                    <div className='user_name w-[150px] h-[75px] to-blue-500'>
+                <div className='user_info w-[150px] h-[150px] my-5 '>
+                <div className="profile mt-11">
+                    <div className='user_name w-[150px] h-[30px] flex items-center justify-center text-2xl '>
                         <h1>Yilong Ma</h1>
                     </div>
                     
-                <div className='followers w-[150px] h-[75px]'>
-                    <button>posts</button>
-                    <button>followers</button>
-                    <button>followings</button>
+                <div className='followers w-[1200px] h-[30px] flex items-strech text-xl'>
+                    <button className='pl-6'>12 posts</button>
+                    <button className='pl-24'>100k followers</button>
+                    <button className='pl-24'>2 followings</button>
                 </div>
-
+                </div>
+                <button className="bg-green-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full">
+                         Edit
+                </button>
                 </div>
             </div>
         </>
