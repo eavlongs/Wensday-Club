@@ -15,7 +15,13 @@ module.exports = {
         colors: {
             'debian-red': '#CA054D',
             'turquoise-blue': '#7BDEF3',
+            'white-smoke': '#F5F5F5',
+            'light-gray': '#D9D9D9',
+            'light-grey': '#D9D9D9',
         },
+        screens: {
+            'desktop': '1281px',
+        }
     },
   },
   plugins: [],
