@@ -1,4 +1,11 @@
+"use client"
+
+
+import { IonIcon } from "@ionic/react"
 import type { Metadata } from "next"
+
+
+
 
 export const metadata: Metadata = {
     title: 'Wensday Club',
@@ -10,6 +17,8 @@ export default function Home() {
 
   return (
     <>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script noModule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
       <div className="w-[70%] m-auto">
         <div className="flex justify-between mt-10">
           <p>something to say?</p>
@@ -27,17 +36,13 @@ export default function Home() {
             </p>
             <img src="/Ling.jpg" alt="" />
             <div className="flex justify-between p-10 w-[90%] m-auto">
-                <button className="border-2 border-black py-3 px-6 rounded-[10px] hover:bg-debian-red hover:text-white">
-                  <div className="flex">
-                    <img src="/like.jpg" alt="" className="w-[30px] h-[30px] pb-1 mr-3"/>
-                    <div>Like</div>
-                  </div>
+                <button className="border-2 border-black py-3 px-6 rounded-[10px] hover:bg-debian-red hover:text-white "><IonIcon name="thumbs-up-outline" className="mr-2 inline-block align-middle"></IonIcon><span className="inline-block align-middle">Like</span>
                 </button>
-                <button className="border-2 border-black py-3 px-6 rounded-[10px]  hover:bg-debian-red hover:text-white">Comment</button>
-                <button className="border-2 border-black py-3 px-6 rounded-[10px]  hover:bg-debian-red hover:text-white">Share</button>
+                <button className="border-2 border-black py-3 px-6 rounded-[10px]  hover:bg-debian-red hover:text-white"><IonIcon name="chatbox-ellipses-outline" className="mr-2 inline-block align-middle"></IonIcon><span className="inline-block align-middle">Comment</span></button>
+                <button className="border-2 border-black py-3 px-6 rounded-[10px]  hover:bg-debian-red hover:text-white"><IonIcon name="share-outline"></IonIcon><span className="ml-2">Share</span></button>
             </div>
         </div>
       </div>
-    </>
+    </> 
   )
 }
