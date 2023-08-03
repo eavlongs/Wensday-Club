@@ -38,15 +38,48 @@ export default function Page(){
                
                 </div>
                 
+                
                 <div className="pt-4 pb-4 pl-[400px]">
                 <button className= "w-[150px] bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full">
                         <a href="/">Edit</a> 
                 </button>
                 </div>
             </div>
-            <div className='w-[1200px] h-[900px] border-black bg-blue-300 pt-6 pl-6'>
-                <div className='w-[400px] h-[400px] bg-green-300 font-bold text-2xl '>
-                    About Me
+            <div className='w-[1200px] h-[900px] border-black bg-blue-300 pt-6 pl-6 flex'>
+                <div className='w-[400px] h-[400px] bg-green-300 pt-6 pl-6'>
+                <div className= "w-[200px] h-[40px] bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-3 rounded-full font-bold text-xl text-center">
+                        About Me
+                </div>
+                <div className='About_Me_text font-mono font-size-sm mt-4 md-0'>
+                        <p>
+                        “Preoccupied with a single leaf...
+                        you won't see the tree.
+                        Preoccupied with a single tree...
+                        you'll miss the entire forest." 
+                        </p>
+                </div>
+                <div className='mt-9'>
+                <div className= "w-[200px] h-[40px] bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-3 rounded-full font-bold text-xl text-center">
+                        Hobbies
+                </div>
+                <div className='About_Me_text font-mono font-size-sm mt-2'>
+                        <ul className="list-disc">
+                            
+                            <li>Cooking Blue</li>
+                            <li>Build Nuclear Reactor</li>
+                        </ul>
+                </div>
+                </div>
+                </div>
+                <div className="somthing-to-say w-[900px] h-[130px] bg-red-300 ml-[30px] flex">
+                    <div className='font-bold text-2xl text-gray-200 pt-4 pb-4'>
+                    <p>Something to say...?</p>
+                    </div>
+                    <div className="post pt-4 pb-4 pl-[270px]">
+                    <button className= "w-[150px] bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full">
+                        <a href="/">Post</a> 
+                </button>
+                    </div>
                 </div>
             </div>
         </>
