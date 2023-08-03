@@ -2,31 +2,62 @@ import Image from 'next/image'
 export default function Page(){
     return(
         <>
-        <div className='cover w-[1200px] h-[300px]'>
+        <div
+  className="block max-w-[1200px] h-[280px] rounded-lg bg-white bg-cover p-6 shadow-lg dark:bg-neutral-700"
+  style={{ backgroundImage: 'url("/sonflower.jpg")' }}
+>
+  <div className="two-button w-[220px] h-[200px] pt-40" >
+    <div className='first-button pb-2 '>
+  <button
+    type="button"
+    className="w-[180px] inline-block rounded border-2 border-neutral-50 px-6 pb-[6px] pt-2 text-xs font-medium uppercase leading-normal text-neutral-50 transition duration-150 ease-in-out hover:border-neutral-100 hover:bg-neutral-500 hover:bg-opacity-10 hover:text-neutral-100 focus:border-neutral-100 focus:text-neutral-100 focus:outline-none focus:ring-0 active:border-neutral-200 active:text-neutral-200 dark:hover:bg-neutral-100 dark:hover:bg-opacity-10 "
+    data-te-ripple-init=""
+  >
+    <a href="">Upload New Cover</a>
+  </button>
+  </div>
+  <button
+    type="button"
+    className="w-[180px] inline-block rounded border-2 border-neutral-50 px-6 pb-[6px] pt-2 text-xs font-medium uppercase leading-normal text-neutral-50 transition duration-150 ease-in-out hover:border-neutral-100 hover:bg-neutral-500 hover:bg-opacity-10 hover:text-neutral-100 focus:border-neutral-100 focus:text-neutral-100 focus:outline-none focus:ring-0 active:border-neutral-200 active:text-neutral-200 dark:hover:bg-neutral-100 dark:hover:bg-opacity-10"
+    data-te-ripple-init=""
+  >
+    <a href="">Delete Cover</a>
+  </button>
+  </div>
+</div>
+        {/* <div className='cover w-[1200px] h-[300px] '>
+        
                     <img
-                        className="max-h-[300px] w-[1200px]"
+                        className="max-h-[300px] w-[1200px] z-0"
                         src="sonflower.jpg"
                         alt="image description"
                         />
-                </div>
+                <button className= "absolute w-[150px] bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full z-30">
+                        <a href="/">Edit</a> 
+                </button>
+                
+                </div> */}
             <div className='under_cover cover w-[990px] h-[200px] ml-52 flex items-start' >
                 
-                <div className="max-w-[150px] max-h-[150px] w-[calc(6rem+6vw)] h-[calc(6rem+6vw)] relative">
+                <div className="max-w-[150px] max-h-[150px] w-[calc(6rem+6vw)] h-[calc(6rem+6vw)] relative ">
                     <Image
                         src="/Olivier_1500_Trptch.jpg"
                         fill={true}
                         alt="profile picture"
                         objectFit="cover"
                         className="rounded-[50%] my-5"
+                        
                     />
+               
                 </div>
+                
                 <div className='user_info w-[150px] h-[150px] my-5 '>
                 <div className="profile mt-11">
                     <div className='user_name w-[150px] h-[30px] flex items-center justify-center text-2xl '>
                         <h1>Yilong Ma</h1>
                     </div>
                     
-                <div className='followers w-[1200px] h-[30px] flex items-strech text-xl '>
+                <div className='followers w-[800px] h-[30px] flex items-strech text-xl '>
                     <button className='pl-6 hover:text-sky-700'><a href="">12 posts</a></button>
                     <button className='pl-24 hover:text-sky-700'><a href="">100k followers</a> </button>
                     <button className='pl-24 hover:text-sky-700'><a href="">2 followings</a></button>
@@ -45,8 +76,8 @@ export default function Page(){
                 </button>
                 </div>
             </div>
-            <div className='w-[1200px] h-[900px] border-black  pt-6 pl-6 flex'>
-                <div className='w-[400px] h-[400px]  pt-6 pl-6 border-2 border-gray-700 rounded-xl'>
+            <div className='w-[1200px] h-[715px] border-black  pt-6 pl-6 flex bg-blue-700'>
+                <div className='w-[400px] h-[400px]  pt-6 pl-6 border-2 border-gray-700 rounded-xl '>
                 <div className= "w-[200px] h-[40px] bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-3 rounded-full font-bold text-xl text-center">
                         About Me
                 </div>
@@ -71,17 +102,24 @@ export default function Page(){
                 </div>
                 </div>
                 </div>
-                <div className="somthing-to-say w-[900px] h-[130px] ml-[30px] flex">
+            <div className="something-to-say-and-postButton bg-red-300 h-[90px]">
+                <div className="somthing-to-say w-[900px] h-[90px] ml-[30px] flex">
                     <div className='font-bold text-2xl text-gray-500 pt-4 pb-4'>
                     <p>Something to say...?</p>
                     </div>
-                    <div className="post pt-4 pb-4 pl-[270px]">
+                    <div className="post pt-4  pl-[390px]">
                     <button className= "w-[150px] bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full">
-                        <a href="/">Post</a> 
+                        <a href="/">Post Here</a> 
                 </button>
                     </div>
                 </div>
+                <div className='w-[930px] h-[600px] bg-blue-300'> 
+                    
+                </div>
+                </div>
+                
             </div>
+            
         </>
     )
 };
