@@ -1,10 +1,7 @@
 "use client"
 
-
 import { IonIcon } from "@ionic/react"
 import type { Metadata } from "next"
-
-
 
 
 export const metadata: Metadata = {
@@ -43,6 +40,6 @@ export default function Home() {
             </div>
         </div>
       </div>
-    </> 
+    </>
   )
 }
