@@ -15,7 +15,7 @@ export default function Page(){
                 </div>
                 <div className="left-box w-[600px] h-[220px] flex items-center justify-center ml-14">
                     <div className="left w-[250px] h-[220px] ">
-                            <div className="max-w-[130px] max-h-[130px] w-[calc(6rem+6vw)] h-[calc(6rem+6vw)] relative ">
+                            <div className="max-w-[125px] max-h-[125px] w-[calc(6rem+6vw)] h-[calc(6rem+6vw)] relative ">
                             <Image
                                 src="/Olivier_1500_Trptch.jpg"
                                 fill={true}
@@ -44,7 +44,7 @@ export default function Page(){
                                     <a href="/">Delete Profile</a> 
                             </button>
                         </div>
-                            <div className="w-[180px] mt-[38px]">
+                            <div className="w-[180px] mt-[33px]">
                                 <input
                                     className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500 text-center "
                                     id="inline-full-name"
