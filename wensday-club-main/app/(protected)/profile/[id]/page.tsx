@@ -3,11 +3,11 @@
 import Image from 'next/image'
 import { IonIcon } from "@ionic/react"
 
-
-export default function Page(){
+export default function Page({ params }: { params: { id: string } }){
     return(
         <>
-        <div
+    {params.id}
+    <div
   className="block max-w-[1200px] h-[280px] rounded-lg bg-white bg-cover p-6 shadow-lg dark:bg-neutral-700"
   style={{ backgroundImage: 'url("/sonflower.jpg")' }}
 >
@@ -29,28 +29,16 @@ export default function Page(){
     <a href="">Delete Cover</a>
   </button>
   </div>
-</div>
-        {/* <div className='cover w-[1200px] h-[300px] '>
-        
-                    <img
-                        className="max-h-[300px] w-[1200px] z-0"
-                        src="sonflower.jpg"
-                        alt="image description"
-                        />
-                <button className= "absolute w-[150px] bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full z-30">
-                        <a href="/">Edit</a> 
-                </button>
+        </div>
+        <div className='under_cover cover w-[990px] h-[200px] ml-52 flex items-start ' >
                 
-                </div> */}
-            <div className='under_cover cover w-[990px] h-[200px] ml-52 flex items-start' >
-                
-                <div className="max-w-[150px] max-h-[150px] w-[calc(6rem+6vw)] h-[calc(6rem+6vw)] relative ">
+                <div className="max-w-[150px] max-h-[110px] w-[calc(6rem+6vw)] h-[calc(6rem+6vw)] relative ">
                     <Image
                         src="/Olivier_1500_Trptch.jpg"
                         fill={true}
                         alt="profile picture"
                         objectFit="cover"
-                        className="rounded-[50%] my-5"
+                        className="rounded-[50%] my-9"
                         
                     />
                
@@ -74,16 +62,16 @@ export default function Page(){
                
                 </div>
                 
-                
-                <div className="pt-4 pb-4 pl-[400px]">
-                <button className= "w-[150px] bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full">
-                        <a href="/">Edit</a> 
-                </button>
+        
+                <div className="pt-4 pb-4 pl-[500px]">
+                  <button className= "w-[230px] h-[47px] bg-debian-red hover:bg-red-700 text-white font-bold py-2 px-4 rounded-[20px]">
+                          <a href="/">Edit</a> 
+                  </button>
                 </div>
             </div>
             <div className='w-[1200px] h-[715px] border-black  pt-6 pl-6 flex'>
-                <div className='w-[400px] h-[400px]  pt-6 pl-6 border-2 border-gray-700 rounded-xl '>
-                <div className= "w-[200px] h-[40px] bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-3 rounded-full font-bold text-xl text-center">
+                <div className='w-[400px] h-[350px]  pt-6 pl-6 border-2 border-gray-700 rounded-xl '>
+                <div className= "w-[200px] h-[40px] bg-red-500  text-white font-bold py-2 px-3 rounded-full font-bold text-xl text-center">
                         About Me
                 </div>
                 <div className='About_Me_text font-mono font-size-sm mt-4 md-0'>
@@ -95,7 +83,7 @@ export default function Page(){
                         </p>
                 </div>
                 <div className='mt-9'>
-                <div className= "w-[200px] h-[40px] bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-3 rounded-full font-bold text-xl text-center">
+                <div className= "w-[200px] h-[40px] bg-red-500  text-white font-bold py-2 px-3 rounded-full font-bold text-xl text-center">
                         Hobbies
                 </div>
                 <div className='About_Me_text font-mono font-size-sm mt-2'>
@@ -112,7 +100,7 @@ export default function Page(){
       <div className="w-[70%] ml-9">
         <div className="flex justify-between mt-10">
           <p>something to say?</p>
-          <button className="relative bg-debian-red border-2 pb-3 pt-3 px-20 rounded-[20px] top-[-20px] text-white font-bold">Post Here</button>
+          <button className="relative bg-debian-red hover:bg-red-700 border-2 pb-3 pt-3 px-20 rounded-[20px] top-[-20px] text-white font-bold">Post Here</button>
         </div>
         <div className="border-2 border-black shadow-sm rounded-2xl">
             <div className="flex p-4">
@@ -150,7 +138,6 @@ export default function Page(){
                 </div> */}
                 
             </div>
-            
         </>
     )
 };
