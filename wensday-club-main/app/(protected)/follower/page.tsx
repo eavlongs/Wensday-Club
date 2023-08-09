@@ -12,7 +12,7 @@ export default function Page() {
                         " font-medium text-sm md:text-base lg:text-xl desktop:text-2xl mb-3"
                     }
                 >
-                    Following
+                    Follower
                 </h1>
 
                 <User />

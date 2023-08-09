@@ -35,7 +35,7 @@ export default function RootLayout({
                 <main className='max-w-[1500px] w-full lg:w-[90%]'>
                     <div className='flex'>
                         <div className='max-w-[310px] w-[15vw] fixed h-screen bg-gradient-to-b from-sky-300 to-rose-300'>
-                            <div className='flex-center flex-col mt-[calc(0.5rem+6vh)] mb-[calc(1.5rem+6vh)]'>
+                            <div className='flex-center flex-col mt-[calc(0.5rem+6vh)] mb-[calc(1.5rem+6vh)] overflow-hidden'>
                                 <div className='max-w-[220px] w-24 md:w-28 lg:w-[9rem] desktop:w-48 2xl:w-72 aspect-square relative'>
                                     <Image
                                         src='/Olivier_1500_Trptch.jpg'
@@ -45,7 +45,7 @@ export default function RootLayout({
                                         className='rounded-[50%]'
                                     />
                                 </div>
-                                <p className='text-[0.5rem] sm:text-sm md:text-sm lg:text-md desktop:text-lg'>
+                                <p className='text-[0.5rem] sm:text-xs md:text-sm lg:text-md desktop:text-lg'>
                                     Yi Long Ma
                                 </p>
                             </div>
@@ -82,7 +82,7 @@ export default function RootLayout({
                             >
                                 Saved
                             </button>
-                            <button className='block px-3 py-1 desktop:py-2 mx-auto mt-[15vh] md:mt-[20vh] 2xl:mt-[25vh] md:w-2/3 lg:w-7/12 desktop:w-1/2 bg-debian-red text-white rounded-[20px] text-xs md:text-sm lg:text-md desktop:text-lg font-bold'>
+                            <button className='block px-3 py-1 desktop:py-2 mx-auto mt-[15vh] md:mt-[16vh] 2xl:mt-[25vh] md:w-2/3 lg:w-7/12 desktop:w-1/2 bg-debian-red text-white rounded-[20px] text-xs md:text-sm lg:text-md desktop:text-lg font-bold'>
                                 Log Out
                             </button>
                         </div>
