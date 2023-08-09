@@ -15,7 +15,7 @@ export default function RootLayout({
     children: React.ReactNode;
 }) {
     const sidebarClassName =
-        "block mx-auto w-2/3 text-[0.5rem] sm:text-sm md:text-sm lg:text-md desktop:text-lg py-1 desktop:py-2 my-1 lg:my-2 desktop:my-3 font-bold ";
+        "block mx-auto w-2/3 text-[0.5rem] sm:text-xs md:text-sm lg:text-md desktop:text-lg py-1 desktop:py-2 font-bold ";
     const sidebarActiveClassName =
         "bg-debian-red text-white bg-opacity-75 hover:bg-opacity-100";
     const sidebarInactiveClassName =
@@ -34,9 +34,9 @@ export default function RootLayout({
             <body className='flex-center'>
                 <main className='max-w-[1500px] w-full lg:w-[90%]'>
                     <div className='flex'>
-                        <div className='max-w-[310px] w-[15vw] fixed h-screen bg-gradient-to-b from-sky-300 to-rose-300'>
-                            <div className='flex-center flex-col mt-[calc(0.5rem+6vh)] mb-[calc(1.5rem+6vh)] overflow-hidden'>
-                                <div className='max-w-[220px] w-24 md:w-28 lg:w-[9rem] desktop:w-48 2xl:w-72 aspect-square relative'>
+                        <div className='max-w-[310px] w-[15vw] fixed h-screen bg-gradient-to-b from-sky-300 to-rose-300 flex flex-col justify-around'>
+                            <div className='flex-center flex-col overflow-hidden'>
+                                <div className='max-w-[220px] w-16 sm:w-24 md:w-28 lg:w-[9rem] desktop:w-48 2xl:w-72 aspect-square relative'>
                                     <Image
                                         src='/Olivier_1500_Trptch.jpg'
                                         fill={true}
@@ -49,40 +49,42 @@ export default function RootLayout({
                                     Yi Long Ma
                                 </p>
                             </div>
-                            <button
-                                onClick={() => setActive(1)}
-                                className={
-                                    sidebarClassName +
-                                    (active === 1
-                                        ? sidebarActiveClassName
-                                        : sidebarInactiveClassName)
-                                }
-                            >
-                                Home
-                            </button>
-                            <button
-                                onClick={() => setActive(2)}
-                                className={
-                                    sidebarClassName +
-                                    (active === 2
-                                        ? sidebarActiveClassName
-                                        : sidebarInactiveClassName)
-                                }
-                            >
-                                Chat
-                            </button>
-                            <button
-                                onClick={() => setActive(3)}
-                                className={
-                                    sidebarClassName +
-                                    (active === 3
-                                        ? sidebarActiveClassName
-                                        : sidebarInactiveClassName)
-                                }
-                            >
-                                Saved
-                            </button>
-                            <button className='block px-3 py-1 desktop:py-2 mx-auto mt-[15vh] md:mt-[16vh] 2xl:mt-[25vh] md:w-2/3 lg:w-7/12 desktop:w-1/2 bg-debian-red text-white rounded-[20px] text-xs md:text-sm lg:text-md desktop:text-lg font-bold'>
+                            <div className='flex flex-col gap-y-1 lg:gap-y-3'>
+                                <button
+                                    onClick={() => setActive(1)}
+                                    className={
+                                        sidebarClassName +
+                                        (active === 1
+                                            ? sidebarActiveClassName
+                                            : sidebarInactiveClassName)
+                                    }
+                                >
+                                    Home
+                                </button>
+                                <button
+                                    onClick={() => setActive(2)}
+                                    className={
+                                        sidebarClassName +
+                                        (active === 2
+                                            ? sidebarActiveClassName
+                                            : sidebarInactiveClassName)
+                                    }
+                                >
+                                    Chat
+                                </button>
+                                <button
+                                    onClick={() => setActive(3)}
+                                    className={
+                                        sidebarClassName +
+                                        (active === 3
+                                            ? sidebarActiveClassName
+                                            : sidebarInactiveClassName)
+                                    }
+                                >
+                                    Saved
+                                </button>
+                            </div>
+                            <button className='block px-3 py-1 desktop:py-2 mx-auto md:w-2/3 lg:w-7/12 desktop:w-1/2 bg-debian-red text-white rounded-[20px] text-[0.5rem] sm:text-xs md:text-sm lg:text-md desktop:text-lg font-bold'>
                                 Log Out
                             </button>
                         </div>
@@ -91,7 +93,7 @@ export default function RootLayout({
                         <div className='w-[85vw] lg:w-[75vw] h-screen'>
                             <div className='flex items-center justify-between w-full h-10 lg:h-12 desktop:h-16 bg-debian-red'>
                                 <Link href='/'>
-                                    <div className='flex ml-10 md:ml-14 lg:ml-20 my-5 text-white text-xs md:text-sm lg:text-lg desktop:text-xl font-bold bg-purple-800 px-3 lg:px-5 py-[0.2rem] lg:py-1 desktop:py-2 shadow-sm shadow-black rounded-[30px]'>
+                                    <div className='flex ml-10 md:ml-14 lg:ml-20 text-white text-xs md:text-sm lg:text-lg desktop:text-xl font-bold bg-purple-800 px-3 lg:px-5 py-[0.2rem] lg:py-1 desktop:py-2 shadow-sm shadow-black rounded-[30px]'>
                                         Wensday Club
                                     </div>
                                 </Link>
