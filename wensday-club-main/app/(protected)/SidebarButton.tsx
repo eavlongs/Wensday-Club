@@ -4,7 +4,6 @@ import { usePathname } from "next/navigation";
 export default function SidebarButton({ text }: { text: string }) {
     const pathname = usePathname();
     let active = false;
-    console.log(pathname);
     if (text.toLowerCase() === "home" && pathname === "/") active = true;
     else if (text.toLowerCase() === "chat" && pathname === "/chat")
         active = true;

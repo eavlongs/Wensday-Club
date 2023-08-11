@@ -36,8 +36,7 @@ export default function RootLayout({
                                         src='/Olivier_1500_Trptch.jpg'
                                         fill={true}
                                         alt='profile picture'
-                                        objectFit='cover'
-                                        className='rounded-[50%]'
+                                        className='rounded-[50%] object-cover'
                                     />
                                 </div>
                                 <p className='text-[0.5rem] sm:text-xs md:text-sm lg:text-md desktop:text-lg'>
