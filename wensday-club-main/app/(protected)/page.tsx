@@ -14,6 +14,7 @@ import Popup from "reactjs-popup";
 export default function Home() {
     const [toggleComment, setToggleComment] = useState(false);
     const [toggleShare, setToggleShare] = useState(false);
+    const [toggleReport, setToggleReport] = useState(false);
     return (
         <>
             <script
@@ -52,7 +53,12 @@ export default function Home() {
                     </p>
                     <img src="/Ling.jpg" alt="" />
                     <div className="flex justify-between p-10 w-[90%] m-auto">
-                        <button className="border-2 border-black py-3 px-6 rounded-[10px] hover:bg-debian-red hover:text-white ">
+                        <button
+                            className="border-2 border-black py-3 px-6 rounded-[10px] hover:bg-debian-red hover:text-white "
+                            onClick={() => {
+                                setToggleReport(!toggleReport);
+                            }}
+                        >
                             <IonIcon
                                 name="thumbs-up-outline"
                                 className="mr-2 inline-block align-middle"
@@ -89,14 +95,14 @@ export default function Home() {
                 {toggleComment ? (
                     <div>
                         <div
-                            className="backdrop-blur-sm bg-gray-400/50 w-screen h-screen fixed top-0 left-0"
+                            className="backdrop-blur-sm bg-gray-600/50 w-screen h-screen fixed top-0 left-0"
                             onClick={() => {
                                 setToggleComment(!toggleComment);
                             }}
                         ></div>
                         <div className="border-2 border-black rounded-[20px] w-[500px] fixed top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] bg-white">
                             <p className="text-center">Comments</p>
-                            <div className="max-h-[300px] min-h-[400px] overflow-scroll">
+                            <div className="max-h-[300px] min-h-[400px] overflow-y-auto">
                                 <div className="pt-6 pb-1 px-6 flex">
                                     <img
                                         src="/Olivier_1500_Trptch.jpg"
@@ -219,7 +225,7 @@ export default function Home() {
                 {toggleShare ? (
                     <div>
                         <div
-                            className="backdrop-blur-sm bg-gray-400/50 w-screen h-screen fixed top-0 left-0"
+                            className="backdrop-blur-sm bg-gray-600/50 w-screen h-screen fixed top-0 left-0"
                             onClick={() => {
                                 setToggleShare(!toggleShare);
                             }}
@@ -248,6 +254,97 @@ export default function Home() {
                                 <button className="border-2 border-white bg-debian-red text-white px-3 py-2 font-bold rounded-[10px]">
                                     Share Now
                                 </button>
+                            </div>
+                        </div>
+                    </div>
+                ) : null}
+                {toggleReport ? (
+                    <div>
+                        <div
+                            className="backdrop-blur-sm bg-gray-600/50 w-screen h-screen fixed top-0 left-0"
+                            onClick={() => {
+                                setToggleReport(!toggleReport);
+                            }}
+                        ></div>
+                        <div className="border-2 border-black bg-white w-[500px] fixed top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] h-[420px] rounded-[10px]">
+                            <p className="text-center font-bold">Report</p>
+                            <p className="ml-10 mt-8 font-bold text-lg">
+                                What is your Problem?
+                            </p>
+                            <div>
+                                <form className="ml-5 mt-5">
+                                    <div className="ml-3 border-2 border-white bg-gray-100 px-5 py-1 rounded-[30px] mb-3 w-[90%]">
+                                        <input
+                                            type="checkbox"
+                                            value="violence_post"
+                                            name="violence_post"
+                                        />
+                                        <label
+                                            htmlFor="violence_post"
+                                            className="ml-3"
+                                        >
+                                            Violence Post
+                                        </label>
+                                    </div>
+
+                                    <div className="ml-3 border-2 border-white bg-gray-100 px-5 py-1 rounded-[30px] mb-3 w-[90%]">
+                                        <input
+                                            type="checkbox"
+                                            value="violence_post"
+                                            name="violence_post"
+                                        />
+                                        <label
+                                            htmlFor="violence_post"
+                                            className="ml-3"
+                                        >
+                                            Violence Post
+                                        </label>
+                                    </div>
+
+                                    <div className="ml-3 border-2 border-white bg-gray-100 px-5 py-1 rounded-[30px] mb-3 w-[90%]">
+                                        <input
+                                            type="checkbox"
+                                            value="violence_post"
+                                            name="violence_post"
+                                        />
+                                        <label
+                                            htmlFor="violence_post"
+                                            className="ml-3"
+                                        >
+                                            Violence Post
+                                        </label>
+                                    </div>
+
+                                    <div className="ml-3 border-2 border-white bg-gray-100 px-5 py-1 rounded-[30px] mb-3 w-[90%]">
+                                        <input
+                                            type="checkbox"
+                                            value="violence_post"
+                                            name="violence_post"
+                                        />
+                                        <label
+                                            htmlFor="violence_post"
+                                            className="ml-3"
+                                        >
+                                            Violence Post
+                                        </label>
+                                    </div>
+
+                                    <div className="ml-3 border-2 border-white bg-gray-100 px-5 py-1 rounded-[30px] mb-3 w-[90%]">
+                                        <input
+                                            type="text"
+                                            placeholder="Other"
+                                            className="bg-gray-100 w-[100%]"
+                                        />
+                                    </div>
+                                </form>
+                                <div className="flex w-[85%] ml-10 mt-5 justify-between text-center">
+                                    <button className="border-2 border-white bg-debian-red text-white px-3 py-2 font-bold rounded-[10px]">
+                                        Cancel
+                                    </button>
+                                    <button className="border-2 border-white bg-debian-red text-white px-3 py-2 font-bold rounded-[10px]">
+                                        Submit
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
