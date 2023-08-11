@@ -1,6 +1,6 @@
 "use client";
 import { ubuntu } from "@/app/fonts";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import useSignUpStore from "@/stores/useSignUpStore";
 import Link from "next/link";
 
@@ -61,18 +61,22 @@ export default function Signup2of3() {
         (state) => state.setStepTwoData
     );
 
-    const [localDate, setLocalDate] = useState<StepTwoDataType>({
-        day: sharedStepTwoData.day,
-        month: sharedStepTwoData.month,
-        year: sharedStepTwoData.year,
+    const [localData, setLocalData] = useState<StepTwoDataType>({
+        ...sharedStepTwoData,
     });
+
+    const isAbleToContinue = !(
+        localData.year === 0 ||
+        localData.month === 0 ||
+        localData.day === 0
+    );
 
     let dayOptions: Array<React.JSX.Element> = [];
 
-    if (localDate.month !== 0 && localDate.year !== 0) {
+    if (localData.month !== 0 && localData.year !== 0) {
         for (
             let i = 1;
-            i <= getDaysInMonth(localDate.year, localDate.month);
+            i <= getDaysInMonth(localData.year, localData.month);
             i++
         ) {
             dayOptions.push(
@@ -84,18 +88,18 @@ export default function Signup2of3() {
     }
 
     function goBack() {
-        setSharedStepTwoData(localDate);
+        setSharedStepTwoData(localData);
         back();
     }
 
     function goToNextPage() {
-        setSharedStepTwoData(localDate);
+        setSharedStepTwoData(localData);
         next();
     }
 
     return (
         <>
-            {/* {JSON.stringify(localDate)} */}
+            {/* {JSON.stringify(localData)} */}
             <p
                 className={
                     ubuntu.className +
@@ -121,10 +125,10 @@ export default function Signup2of3() {
             <div className='shadow-none flex justify-around w-[17rem] md:w-[19rem] lg:w-[22rem] desktop:w-[25rem] mb-6 lg:mb-8 desktop:mb-9'>
                 <select
                     className='text-xs lg:text-base desktop:text-lg font-bold cursor-pointer bg-light-gray text-gray-600 px-2 md:px-4 py-[0.35rem] md:py-2 rounded-xl'
-                    value={localDate.year}
+                    value={localData.year}
                     onChange={(e) => {
-                        setLocalDate({
-                            ...localDate,
+                        setLocalData({
+                            ...localData,
                             year: parseInt(e.target.value),
                         });
                     }}
@@ -135,11 +139,12 @@ export default function Signup2of3() {
 
                 <select
                     className='text-xs lg:text-base desktop:text-lg font-bold cursor-pointer bg-light-gray text-gray-600 px-2 md:px-4 py-[0.35rem] md:py-2 rounded-xl capitalize'
-                    value={localDate.month}
+                    value={localData.month}
                     onChange={(e) => {
-                        setLocalDate({
-                            ...localDate,
+                        setLocalData({
+                            ...localData,
                             month: parseInt(e.target.value),
+                            day: 0,
                         });
                     }}
                 >
@@ -149,14 +154,14 @@ export default function Signup2of3() {
 
                 <select
                     className='text-xs lg:text-base desktop:text-lg font-bold cursor-pointer bg-light-gray text-gray-600 px-2 md:px-4 py-[0.35rem] md:py-2 rounded-xl'
-                    value={localDate.day}
+                    value={localData.day}
                     onClick={() => {
                         if (dayOptions.length === 0)
                             alert("Please Choose The Year and Month First!");
                     }}
                     onChange={(e) => {
-                        setLocalDate({
-                            ...localDate,
+                        setLocalData({
+                            ...localData,
                             day: parseInt(e.target.value),
                         });
                     }}
@@ -174,14 +179,18 @@ export default function Signup2of3() {
                     Back
                 </button>
                 <button
-                    className='text-center bg-debian-red text-white-smoke font-bold px-8 py-2 rounded-2xl'
+                    className={
+                        "text-center bg-debian-red text-white-smoke font-bold px-8 py-2 rounded-2xl " +
+                        (!isAbleToContinue ? "opacity-70" : "opacity-100")
+                    }
                     onClick={goToNextPage}
+                    disabled={!isAbleToContinue}
                 >
                     Next
                 </button>
             </div>
 
-            <div className='text-[0.5rem] lg:text-xs desktop:sm font-semibold leading-7'>
+            <div className='text-[0.5rem] lg:text-xs desktop:sm font-semibold mt-2 lg:mt-3 desktop:mt-4 !leading-3 lg:!leading-5 desktop:!leading-6'>
                 <p className='text-[#7F7F7F]'>
                     Already have an account?&nbsp;
                     <Link

@@ -1,4 +1,3 @@
-import { Ubuntu } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
 import { ubuntu } from "@/app/fonts";
@@ -17,7 +16,7 @@ export default function Page() {
             <p
                 className={
                     ubuntu.className +
-                    " font-bold opacity-50 text-center leading-tight mb-4 lg:mb-5 desktop:mb-6 text-xs lg:text-sm desktop:text-base mt-1 lg:mt-2 desktop:mt-3"
+                    " font-bold opacity-50 text-center leading-tight mb-4 lg:mb-5 desktop:mb-6 text-[0.5rem] lg:text-xs desktop:sm mt-1 lg:mt-2 desktop:mt-3"
                 }
             >
                 Welcome to Wenzday
@@ -26,7 +25,7 @@ export default function Page() {
             </p>
 
             <Link href='/login'>
-                <button className='text-lg lg:text-xl desktop:text-2xl bg-debian-red text-white-smoke font-medium px-16 md:px-14 py-2 rounded-2xl flex align-center my-4 lg:my-5 desktop:my-7 2xl:my-9'>
+                <button className='text-base lg:text-lg desktop:text-xl bg-debian-red text-white-smoke font-medium px-10 lg:px-12 py-2 rounded-2xl flex align-center my-2 md:my-3 lg:my-3 desktop:my-4'>
                     <div className='relative w-5 lg:w-6 desktop:w-7 aspect-square mr-2'>
                         <Image
                             src='/signin.png'
@@ -40,7 +39,7 @@ export default function Page() {
             </Link>
 
             <Link href='/signup'>
-                <button className='text-lg lg:text-xl desktop:text-2xl bg-debian-red text-white-smoke font-medium px-16 md:px-14 py-2 rounded-2xl flex align-center my-4 lg:my-5 desktop:my-7 2xl:my-9'>
+                <button className='text-base lg:text-lg desktop:text-xl bg-debian-red text-white-smoke font-medium px-10 lg:px-12 py-2 rounded-2xl flex align-center my-2 md:my-3 lg:my-3 desktop:my-4'>
                     <div className='relative w-5 lg:w-6 desktop:w-7 aspect-square mr-2'>
                         <Image
                             src='/signin.png'
@@ -54,7 +53,7 @@ export default function Page() {
             </Link>
 
             <Link href='#'>
-                <button className='text-lg lg:text-xl desktop:text-2xl bg-debian-red text-white-smoke font-medium px-16 md:px-14 py-2 rounded-2xl flex align-center my-4 lg:my-5 desktop:my-7 2xl:my-9'>
+                <button className='text-base lg:text-lg desktop:text-xl bg-debian-red text-white-smoke font-medium px-10 lg:px-12 py-2 rounded-2xl flex align-center my-2 md:my-3 lg:my-3 desktop:my-4'>
                     <div className='relative w-5 lg:w-6 desktop:w-7 aspect-square mr-2'>
                         <Image
                             src='/signin.png'

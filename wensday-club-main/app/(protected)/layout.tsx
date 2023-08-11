@@ -1,28 +1,23 @@
-"use client";
-
 import Image from "next/image";
-import { useState } from "react";
-
 import "../globals.css";
-import { Inter } from "next/font/google";
 import Link from "next/link";
+import SidebarButton from "./SidebarButton";
+import type { Metadata } from "next";
 
-const inter = Inter({ subsets: ["latin"] });
+export const metadata: Metadata = {
+    title: {
+        default: "Wensday Club",
+        template: "%s",
+    },
+    description: "Join Wensday Club today",
+    viewport: "width=device-width, initial-scale=1",
+};
 
 export default function RootLayout({
     children,
 }: {
     children: React.ReactNode;
 }) {
-    const sidebarClassName =
-        "block mx-auto w-2/3 text-[0.5rem] sm:text-xs md:text-sm lg:text-md desktop:text-lg py-1 desktop:py-2 font-bold ";
-    const sidebarActiveClassName =
-        "bg-debian-red text-white bg-opacity-75 hover:bg-opacity-100";
-    const sidebarInactiveClassName =
-        "text-debian-red hover:text-white hover:bg-debian-red";
-
-    const [active, setActive] = useState(1);
-
     return (
         <html lang='en'>
             <head>
@@ -50,43 +45,15 @@ export default function RootLayout({
                                 </p>
                             </div>
                             <div className='flex flex-col gap-y-1 lg:gap-y-3'>
-                                <button
-                                    onClick={() => setActive(1)}
-                                    className={
-                                        sidebarClassName +
-                                        (active === 1
-                                            ? sidebarActiveClassName
-                                            : sidebarInactiveClassName)
-                                    }
-                                >
-                                    Home
-                                </button>
-                                <button
-                                    onClick={() => setActive(2)}
-                                    className={
-                                        sidebarClassName +
-                                        (active === 2
-                                            ? sidebarActiveClassName
-                                            : sidebarInactiveClassName)
-                                    }
-                                >
-                                    Chat
-                                </button>
-                                <button
-                                    onClick={() => setActive(3)}
-                                    className={
-                                        sidebarClassName +
-                                        (active === 3
-                                            ? sidebarActiveClassName
-                                            : sidebarInactiveClassName)
-                                    }
-                                >
-                                    Saved
-                                </button>
+                                <SidebarButton text='home' />
+                                <SidebarButton text='chat' />
+                                <SidebarButton text='saved' />
                             </div>
-                            <button className='block px-3 py-1 desktop:py-2 mx-auto md:w-2/3 lg:w-7/12 desktop:w-1/2 bg-debian-red text-white rounded-[20px] text-[0.5rem] sm:text-xs md:text-sm lg:text-md desktop:text-lg font-bold'>
-                                Log Out
-                            </button>
+                            <Link href='/login'>
+                                <button className='block px-3 py-1 desktop:py-2 mx-auto md:w-2/3 lg:w-7/12 desktop:w-1/2 bg-debian-red text-white rounded-[20px] text-[0.5rem] sm:text-xs md:text-sm lg:text-md desktop:text-lg font-bold'>
+                                    Log Out
+                                </button>
+                            </Link>
                         </div>
                         <div className='max-w-[310px] w-[15vw]'></div>
 

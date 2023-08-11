@@ -18,27 +18,33 @@ export default function Signup1of3() {
         (state) => state.setStepOneData
     );
 
-    const [localStep1Data, setLocalStep1Data] = useState<StepOneDataType>({
+    const [localData, setLocalData] = useState<StepOneDataType>({
         ...sharedStepOneData,
     });
 
+    const isAbleToContinue = !(
+        localData.email.length === 0 ||
+        localData.firstName.length === 0 ||
+        localData.lastName.length === 0
+    );
+
     function updateFirstName(newFirstName: string) {
-        setLocalStep1Data((oldData) => ({
+        setLocalData((oldData) => ({
             ...oldData,
             firstName: newFirstName,
         }));
     }
 
     function updateLastName(newLastName: string) {
-        setLocalStep1Data((oldData) => ({ ...oldData, lastName: newLastName }));
+        setLocalData((oldData) => ({ ...oldData, lastName: newLastName }));
     }
 
     function updateEmail(newEmail: string) {
-        setLocalStep1Data((oldData) => ({ ...oldData, email: newEmail }));
+        setLocalData((oldData) => ({ ...oldData, email: newEmail }));
     }
 
     function goToNextStep() {
-        setSharedStepOneData(localStep1Data);
+        setSharedStepOneData(localData);
         next();
     }
 
@@ -67,13 +73,13 @@ export default function Signup1of3() {
                 <LoginInput
                     type='text'
                     placeholder='First Name'
-                    value={localStep1Data.firstName}
+                    value={localData.firstName}
                     onChange={updateFirstName}
                 />
                 <LoginInput
                     type='text'
                     placeholder='First Name'
-                    value={localStep1Data.lastName}
+                    value={localData.lastName}
                     onChange={updateLastName}
                 />
             </div>
@@ -81,20 +87,24 @@ export default function Signup1of3() {
             <LoginInput
                 type='email'
                 className='mt-3 lg:mt-5 desktop:mt-7 mb-6 lg:mb-8 desktop:mb-9'
-                value={localStep1Data.email}
+                value={localData.email}
                 onChange={updateEmail}
             />
 
             <div className='flex justify-end mx-auto w-[17rem] md:w-[19rem] lg:w-[22rem] desktop:w-[25rem] my-4 lg:my-5 desktop:my-7 2xl:my-9 text-xs lg:text-base desktop:text-lg'>
                 <button
-                    className='text-center bg-debian-red text-white-smoke font-bold px-8 py-2 rounded-2xl'
+                    className={
+                        "text-center bg-debian-red text-white-smoke font-bold px-8 py-2 rounded-2xl " +
+                        (!isAbleToContinue ? "opacity-70" : "opacity-100")
+                    }
                     onClick={goToNextStep}
+                    disabled={!isAbleToContinue}
                 >
                     Next
                 </button>
             </div>
 
-            <div className='text-[0.5rem] lg:text-xs desktop:sm font-semibold leading-7'>
+            <div className='text-[0.5rem] lg:text-xs desktop:sm font-semibold mt-2 lg:mt-3 desktop:mt-4 !leading-3 lg:!leading-5 desktop:!leading-6'>
                 <p className='text-[#7F7F7F]'>
                     Already have an account?&nbsp;
                     <Link
