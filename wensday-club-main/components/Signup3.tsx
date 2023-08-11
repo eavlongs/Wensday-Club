@@ -18,17 +18,23 @@ export default function Signup3of3() {
     );
 
     const [localData, setLocalData] = useState<StepThreeDataType>({
-        password: sharedStepThreeData.password,
-        confirmPassword: sharedStepThreeData.confirmPassword,
+        ...sharedStepThreeData,
     });
+
+    const isAbleToSignUp =
+        !(
+            localData.password.length === 0 ||
+            localData.confirmPassword.length === 0
+        ) && localData.password === localData.confirmPassword;
 
     function goBack() {
         setSharedStepThreeData(localData);
         back();
     }
 
-    function signUp() {
-        console.log(data);
+    async function signUp() {
+        setSharedStepThreeData(localData);
+        window.location.href = "/";
     }
 
     return (
@@ -81,14 +87,19 @@ export default function Signup3of3() {
                     Back
                 </button>
                 <button
-                    className='text-center bg-debian-red text-white-smoke font-bold px-8 py-2 rounded-2xl'
+                    type='submit'
+                    className={
+                        "text-center bg-debian-red text-white-smoke font-bold px-8 py-2 rounded-2xl " +
+                        (!isAbleToSignUp ? "opacity-70" : "opacity-100")
+                    }
                     onClick={signUp}
+                    disabled={!isAbleToSignUp}
                 >
                     Sign Up
                 </button>
             </div>
 
-            <div className='text-[0.5rem] lg:text-xs desktop:sm font-semibold leading-7'>
+            <div className='text-[0.5rem] lg:text-xs desktop:sm font-semibold mt-2 lg:mt-3 desktop:mt-4 !leading-3 lg:!leading-5 desktop:!leading-6'>
                 <p className='text-[#7F7F7F]'>
                     Already have an account?&nbsp;
                     <Link

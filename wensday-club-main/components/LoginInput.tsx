@@ -67,7 +67,14 @@ export default function LoginInput({
                 {imageSrc !== "" ? (
                     <div className='absolute top-[0.4rem] left-4 md:top-[0.35rem] lg:top-2 desktop:top-[0.6rem]'>
                         <div className='relative w-4 md:w-5 lg:w-6 aspect-square'>
-                            <Image src={imageSrc} fill alt={type + " icon"} />
+                            <Image
+                                src={imageSrc}
+                                fill
+                                sizes='(min-width: 768px) 1.25rem,
+                                        (min-width: 1024px) 1.5rem
+                                        1rem'
+                                alt={type + " icon"}
+                            />
                         </div>
                     </div>
                 ) : null}
@@ -81,6 +88,9 @@ export default function LoginInput({
                                         : "/hide-password.png"
                                 }
                                 fill
+                                sizes='(min-width: 768px) 1.25rem,
+                                        (min-width: 1024px) 1.5rem
+                                        1rem'
                                 alt={type + " icon"}
                                 onClick={() => {
                                     setPasswordVisible((oldValue) => {
