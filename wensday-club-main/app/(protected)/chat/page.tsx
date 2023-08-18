@@ -33,12 +33,12 @@ function InsideChat() {
 
             <div className='min-h-screen flex flex-col items-center justify-center'>
                 {/* chat box */}
-                <div className='w-[600px] h-[700px] flex flex-col border shadow-md bg-white'>
-                    <div className='flex items-center justify-between border-b p-2 h-[100px]'>
+                <div className='w-[500px] h-[550px] flex flex-col border shadow-md bg-white'>
+                    <div className='flex items-center justify-between border-b p-2 h-[70px]'>
                         {/* user info */}
                         <div className='flex items-center'>
                             <img
-                                className='rounded-full w-[70px] h-[70px] ml-9'
+                                className='rounded-full w-[50px] h-[50px] ml-9 object-cover'
                                 src='/Olivier_1500_Trptch.jpg'
                             />
 
@@ -87,11 +87,11 @@ function InsideChat() {
                         <div className='flex items-center mb-4'>
                             <div className='flex-none flex flex-col items-center space-y-1 mr-4'>
                                 <img
-                                    className='rounded-full w-[80px] h-[80px]'
+                                    className='rounded-full  w-[60px] h-[60px] object-cover'
                                     src='Olivier_1500_Trptch.jpg'
                                 />
                             </div>
-                            <div className='flex-1 bg-red-600 text-white p-2 rounded-lg mb-2 relative'>
+                            <div className='flex-1 bg-red-600 text-white p-2 rounded-lg mb-2 relative text-xs'>
                                 <div>
                                     Lorem ipsum dolor sit amet, consectetur
                                     adipisicing elit.
@@ -105,7 +105,7 @@ function InsideChat() {
                         {/* chat message */}
                         <div className='flex items-center flex-row-reverse mb-4'>
                             <div className='flex-none flex flex-col items-center space-y-1 ml-4'></div>
-                            <div className='flex-1 bg-indigo-100 text-gray-800 p-2 rounded-lg mb-2 relative'>
+                            <div className='flex-1 bg-indigo-100 text-gray-800 p-2 rounded-lg mb-2 relative text-xs'>
                                 <div>
                                     Lorem ipsum dolor sit amet, consectetur
                                     adipisicing elit.Lorem ipsum dolor sit amet,
@@ -121,11 +121,11 @@ function InsideChat() {
                         <div className='flex items-center mb-4'>
                             <div className='flex-none flex flex-col items-center space-y-1 mr-4'>
                                 <img
-                                    className='rounded-full w-[80px] h-[80px]'
+                                    className='rounded-full w-[60px] h-[60px] object-cover'
                                     src='Olivier_1500_Trptch.jpg'
                                 />
                             </div>
-                            <div className='flex-1 bg-red-600 text-white p-2 rounded-lg mb-2 relative'>
+                            <div className='flex-1 bg-red-600 text-white p-2 rounded-lg mb-2 relative text-xs'>
                                 <div>
                                     Lorem ipsum dolor sit amet, consectetur
                                     adipisicing elit.
@@ -137,31 +137,10 @@ function InsideChat() {
                         </div>
                         {/* end chat message */}
                     </div>
-                    <div className='flex items-center border-t p-2'>
+                    <div className='flex items-center border-t p-2 h-[50px]'>
                         {/* chat input action */}
-                        <div>
-                            {/* <button
-                                className='inline-flex hover:bg-indigo-50 rounded-full p-2'
-                                type='button'
-                            >
-                                <svg
-                                    xmlns='http://www.w3.org/2000/svg'
-                                    className='h-6 w-6'
-                                    fill='none'
-                                    viewBox='0 0 24 24'
-                                    stroke='currentColor'
-                                >
-                                    <path
-                                        strokeLinecap='round'
-                                        strokeLinejoin='round'
-                                        strokeWidth={2}
-                                        d='M12 6v6m0 0v6m0-6h6m-6 0H6'
-                                    />
-                                </svg>
-                            </button> */}
-                        </div>
                         {/* end chat input action */}
-                        <div className='w-full mx-2 '>
+                        <div className='w-full mx-1 '>
                             <input
                                 className='w-full  border-none focus:outline-none'
                                 type='text'
@@ -178,7 +157,7 @@ function InsideChat() {
                                 <img
                                     src='send.png'
                                     alt=''
-                                    className='w-[40px] h-[40px]'
+                                    className='w-[33px] h-[33px]'
                                 />
                             </button>
                         </div>
