@@ -32,7 +32,7 @@ export default function RootLayout({
                     </span>
                 </div>
                 {/* md:w-[39%] sm:w-1/2 max-w-xl */}
-                <div className='flex-center flex-col mt-7 desktop:mt-10 border-[1px] shadow-xl border-gray-700 rounded-xl w-fit px-10 desktop:px-12 mx-auto bg-white-smoke py-4 lg:py-5 desktop:py-7'>
+                <div className='flex-center min-w-[30rem] flex-col mt-7 desktop:mt-10 border-[1px] shadow-xl border-gray-700 rounded-xl w-fit px-10 desktop:px-12 mx-auto bg-white-smoke py-4 lg:py-5 desktop:py-7'>
                     {children}
                 </div>
             </body>

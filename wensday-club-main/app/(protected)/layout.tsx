@@ -31,14 +31,16 @@ export default function RootLayout({
                     <div className='flex'>
                         <div className='max-w-[310px] w-[15vw] fixed h-screen bg-gradient-to-b from-sky-300 to-rose-300 flex flex-col justify-around'>
                             <div className='flex-center flex-col overflow-hidden'>
-                                <div className='max-w-[220px] w-16 sm:w-24 md:w-28 lg:w-[9rem] desktop:w-48 2xl:w-72 aspect-square relative'>
-                                    <Image
-                                        src='/Olivier_1500_Trptch.jpg'
-                                        fill={true}
-                                        alt='profile picture'
-                                        className='rounded-[50%] object-cover'
-                                    />
-                                </div>
+                                <Link href='/edit'>
+                                    <div className='max-w-[220px] w-16 sm:w-24 md:w-28 lg:w-[9rem] desktop:w-48 2xl:w-72 aspect-square relative'>
+                                        <Image
+                                            src='/Olivier_1500_Trptch.jpg'
+                                            fill={true}
+                                            alt='profile picture'
+                                            className='rounded-[50%] object-cover'
+                                        />
+                                    </div>
+                                </Link>
                                 <p className='text-[0.5rem] sm:text-xs md:text-sm lg:text-md desktop:text-lg'>
                                     Yi Long Ma
                                 </p>

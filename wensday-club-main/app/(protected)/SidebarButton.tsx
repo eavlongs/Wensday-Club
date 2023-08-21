@@ -1,7 +1,12 @@
 "use client";
+import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-export default function SidebarButton({ text }: { text: string }) {
+export default function SidebarButton({
+    text,
+}: {
+    text: "home" | "chat" | "saved";
+}) {
     const pathname = usePathname();
     let active = false;
     if (text.toLowerCase() === "home" && pathname === "/") active = true;
@@ -19,13 +24,15 @@ export default function SidebarButton({ text }: { text: string }) {
         "text-debian-red hover:text-white hover:bg-debian-red";
 
     return (
-        <button
-            className={
-                sidebarClassName +
-                (active ? sidebarActiveClassName : sidebarInactiveClassName)
-            }
-        >
-            {text}
-        </button>
+        <Link href={text === "home" ? "/" : text}>
+            <button
+                className={
+                    sidebarClassName +
+                    (active ? sidebarActiveClassName : sidebarInactiveClassName)
+                }
+            >
+                {text}
+            </button>
+        </Link>
     );
 }

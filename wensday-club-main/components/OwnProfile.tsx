@@ -1,5 +1,6 @@
 import { IonIcon } from "@ionic/react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function OwnProfile({ onEdit }: { onEdit: () => void }) {
     return (
@@ -49,10 +50,10 @@ export default function OwnProfile({ onEdit }: { onEdit: () => void }) {
                                 <a href=''>12 posts</a>
                             </button>
                             <button className='pl-24 hover:text-sky-700'>
-                                <a href=''>100k followers</a>{" "}
+                                <Link href='/follower'>100k followers</Link>{" "}
                             </button>
                             <button className='pl-24 hover:text-sky-700'>
-                                <a href=''>2 followings</a>
+                                <Link href='/following'>2 followings</Link>
                             </button>
                         </div>
                     </div>

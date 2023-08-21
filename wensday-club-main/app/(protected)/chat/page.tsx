@@ -7,7 +7,7 @@ export default function Page() {
     return chatID.length === 0 ? (
         <Chat onClick={(id) => setChatID(id)} />
     ) : (
-        <InsideChat />
+        <InsideChat onExit={() => setChatID("")} />
     );
 }
 
@@ -21,19 +21,24 @@ function Chat({ onClick }: { onClick: (id: string) => void }) {
                 <User onClick={(id) => onClick(id)} id='some ID' />
                 <User onClick={(id) => onClick(id)} id='some ID' />
                 <User onClick={(id) => onClick(id)} id='some ID' />
+                <User onClick={(id) => onClick(id)} id='some ID' />
+                <User onClick={(id) => onClick(id)} id='some ID' />
+                <User onClick={(id) => onClick(id)} id='some ID' />
+                <User onClick={(id) => onClick(id)} id='some ID' />
+                <User onClick={(id) => onClick(id)} id='some ID' />
             </div>
         </div>
     );
 }
 
-function InsideChat() {
+function InsideChat({ onExit }: { onExit: () => void }) {
     return (
         <>
             {/* <div className="chat w-[700px] h-[500px]  py-20 px-20 items-center justify-center ml-[300px] mt-[200px] "> */}
 
-            <div className='min-h-screen flex flex-col items-center justify-center'>
+            <div className='min-h-screen flex flex-col items-center mt-5'>
                 {/* chat box */}
-                <div className='w-[500px] h-[550px] flex flex-col border shadow-md bg-white'>
+                <div className='w-[500px] lg:h-[90vh] max-h-[650px] flex flex-col border shadow-md bg-white'>
                     <div className='flex items-center justify-between border-b p-2 h-[70px]'>
                         {/* user info */}
                         <div className='flex items-center'>
@@ -63,6 +68,7 @@ function InsideChat() {
                             <button
                                 className='inline-flex hover:bg-indigo-50 rounded-full p-2'
                                 type='button'
+                                onClick={onExit}
                             >
                                 <svg
                                     xmlns='http://www.w3.org/2000/svg'
