@@ -7,17 +7,17 @@ export default function Page() {
     const [editPassword, setEditPassword] = useState(false);
     return (
         <>
-            <div className='hugecontainer w-full h-[750px] pt-6 border-gray-700'>
-                <div className='upper-container  w-[1100px] h-[230px]  pt-6 pl-6 flex'>
-                    <div className='right-box w-[200px] h-[100px]'>
+            <div className='hugecontainer w-full h-[750px] border-gray-700'>
+                <div className='upper-container  w-16 md:w-[900px] lg:w-[1100px] h-[230px]  pt-6 pl-6 flex'>
+                    <div className='right-box w-[200px] h-[100px] absolute'>
                         <button
-                            className='w-[200px] bg-debian-red hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full'
+                            className='w-[200px] bg-debian-red hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full  '
                             onClick={() => setEditPassword(true)}
                         >
                             Change Password
                         </button>
                     </div>
-                    <div className='left-box w-[600px] h-[220px] flex items-center justify-center mx-auto'>
+                    <div className='left-box w-[600px] h-[220px] flex  items-center justify-center mx-auto'>
                         <div className='left w-[250px] h-[220px] '>
                             <div className='max-w-[125px] max-h-[125px] w-[calc(6rem+6vw)] h-[calc(6rem+6vw)] relative '>
                                 <Image
@@ -81,18 +81,18 @@ export default function Page() {
                     </div>
                 </div>
                 <div className='buttom w-[1200px] h-[230px] pt-6 pl-6 flex space-x-10 '>
-                    <div className='w-[400px] h-[200px]  pt-2 pl-9 border-2 border-gray-700 rounded-xl '>
-                        <div className='w-[200px] h-[40px] bg-red-500  text-white font-bold py-2 px-3 rounded-full text-xl text-center'>
+                    <div className='w-[400px] h-[200px]  pt-2 px-2 border-2 border-gray-700 rounded-xl '>
+                        <div className='w-[200px] h-[40px] bg-red-500  text-white font-bold py-2 px-3 rounded-full text-xl text-center mx-auto'>
                             About Me
                         </div>
                         <textarea
                             rows={5}
-                            cols={40}
+                            cols={36}
                             name='commentfield'
                             defaultValue={
                                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "
                             }
-                            className='mt-3 focus:outline-none '
+                            className='mt-3 mx-7 focus:outline-none text-justify'
                         />
 
                         {/* <div className='About_Me_text font-mono font-size-sm '>
@@ -105,8 +105,8 @@ export default function Page() {
                          </div> */}
                     </div>
 
-                    <div className='w-[400px] h-[200px] pt-2 pl-9 border-2 border-gray-700 rounded-xl'>
-                        <div className='w-[200px] h-[40px] bg-red-500  text-white font-bold py-2 px-3 rounded-full text-xl text-center'>
+                    <div className='w-[400px] h-[200px] pt-2 px-9 border-2 border-gray-700 rounded-xl'>
+                        <div className='w-[200px] h-[40px] bg-red-500  text-white font-bold py-2 px-3 rounded-full text-xl text-center mx-auto'>
                             Add Hobbies
                         </div>
                         <div className='About_Me_text font-mono font-size-sm mt-2'>
