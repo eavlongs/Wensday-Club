@@ -8,10 +8,10 @@ export default function Page() {
     return (
         <>
             <div className='hugecontainer w-full h-[750px] border-gray-700'>
-                <div className='upper-container  w-16 md:w-[900px] lg:w-[1100px] h-[230px]  pt-6 pl-6 flex'>
-                    <div className='right-box w-[200px] h-[100px] absolute'>
+                <div className='upper-container  md:w-[900px] lg:w-[1100px] h-[230px]  pt-6 pl-6 flex'>
+                    <div className='right-box md:w-[130px] lg:w-[190px] h-[100px] absolute md:text-md'>
                         <button
-                            className='w-[200px] bg-debian-red hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full  '
+                            className='md:w-[130px] lg:w-[190px] bg-debian-red hover:bg-red-700 text-white lg:text-md font-bold py-2 px-4 rounded-full  '
                             onClick={() => setEditPassword(true)}
                         >
                             Change Password
@@ -80,19 +80,19 @@ export default function Page() {
                         </button>
                     </div>
                 </div>
-                <div className='buttom w-[1200px] h-[230px] pt-6 pl-6 flex space-x-10 '>
-                    <div className='w-[400px] h-[200px]  pt-2 px-2 border-2 border-gray-700 rounded-xl '>
-                        <div className='w-[200px] h-[40px] bg-red-500  text-white font-bold py-2 px-3 rounded-full text-xl text-center mx-auto'>
+                <div className='buttom w-full h-[180px] pt-6 pl-6 flex space-x-10 '>
+                    <div className='md:w-[200px] lg:w-[400px] h-[180px]  pt-2 px-2 border-2 border-gray-700 rounded-xl '>
+                        <div className='md:w-[100px] lg:w-[200px] h-[40px] bg-red-500  text-white font-bold py-2 px-3 rounded-full text-xl text-center mx-auto'>
                             About Me
                         </div>
                         <textarea
-                            rows={5}
+                            rows={4}
                             cols={36}
                             name='commentfield'
                             defaultValue={
                                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "
                             }
-                            className='mt-3 mx-7 focus:outline-none text-justify'
+                            className='mt-3 mx-7 focus:outline-none text-justify  md:w-[100px] lg:w-[320px]'
                         />
 
                         {/* <div className='About_Me_text font-mono font-size-sm '>
@@ -105,7 +105,7 @@ export default function Page() {
                          </div> */}
                     </div>
 
-                    <div className='w-[400px] h-[200px] pt-2 px-9 border-2 border-gray-700 rounded-xl'>
+                    <div className='w-[400px] h-[180px] pt-2 px-9 border-2 border-gray-700 rounded-xl'>
                         <div className='w-[200px] h-[40px] bg-red-500  text-white font-bold py-2 px-3 rounded-full text-xl text-center mx-auto'>
                             Add Hobbies
                         </div>
@@ -134,8 +134,8 @@ export default function Page() {
                             </ul>
                         </div>
                     </div>
-                    <div className='w-[300px] h-[200px]'>
-                        <div className='mt-[159px] ml-[200px]'>
+                    <div className='md:w-[200px] h-[180px]'>
+                        <div className='mt-[140px] lg:ml-[78px] md:ml-[100px]'>
                             <button
                                 className='w-[100px] shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded'
                                 type='button'

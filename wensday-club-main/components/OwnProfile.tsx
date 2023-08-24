@@ -30,7 +30,7 @@ export default function OwnProfile({ onEdit }: { onEdit: () => void }) {
             </div>
 
             <div className='under_cover cover w-[990px] h-[200px] ml-52 flex items-start '>
-                <div className='max-w-[150px] max-h-[110px] w-[calc(6rem+6vw)] h-[calc(6rem+6vw)] relative '>
+                <div className='max-w-[150px] max-h-[150px] w-[calc(6rem+6vw)] h-[calc(6rem+6vw)] relative '>
                     <Image
                         src='/Olivier_1500_Trptch.jpg'
                         fill={true}
@@ -59,7 +59,7 @@ export default function OwnProfile({ onEdit }: { onEdit: () => void }) {
                     </div>
                 </div>
 
-                <div className='pt-4 pb-4 pl-[500px]'>
+                <div className='pt-4 pb-4 lg:pl-[350px] '>
                     <button
                         className='w-[230px] h-[47px] bg-debian-red hover:bg-red-700 text-white font-bold py-2 px-4 rounded-[20px]'
                         onClick={() => onEdit()}
