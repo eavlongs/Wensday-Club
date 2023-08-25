@@ -5,3 +5,31 @@
 .flex-center {
     @apply flex items-center justify-center;
 }
+
+.like-btn:hover .like-text {
+    display: none;
+}
+
+.like-btn:hover::after {
+    content: "11";
+    vertical-align: middle;
+}
+
+.comment-btn:hover .comment-text {
+    display: none;
+}
+
+.comment-btn:hover::after {
+    content: "Comment";
+    vertical-align: middle;
+}
+
+.share-btn:hover .share-text {
+    display: none;
+}
+
+.share-btn:hover::after {
+    content: "Share";
+    vertical-align: middle;
+}
+

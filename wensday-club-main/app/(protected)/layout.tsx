@@ -41,7 +41,7 @@ export default function RootLayout({
                                         />
                                     </div>
                                 </Link>
-                                <p className='text-[0.5rem] sm:text-xs md:text-sm lg:text-md desktop:text-lg'>
+                                <p className='text-[0.5rem] sm:text-xs md:text-sm lg:text-base desktop:text-lg'>
                                     Yi Long Ma
                                 </p>
                             </div>
@@ -51,7 +51,7 @@ export default function RootLayout({
                                 <SidebarButton text='saved' />
                             </div>
                             <Link href='/login'>
-                                <button className='block px-3 py-1 desktop:py-2 mx-auto md:w-2/3 lg:w-7/12 desktop:w-1/2 bg-debian-red text-white rounded-[20px] text-[0.5rem] sm:text-xs md:text-sm lg:text-md desktop:text-lg font-bold'>
+                                <button className='block px-3 py-1 desktop:py-2 mx-auto md:w-2/3 lg:w-7/12 desktop:w-1/2 bg-debian-red text-white rounded-[20px] text-[0.5rem] sm:text-xs md:text-sm lg:text-base desktop:text-lg font-bold'>
                                     Log Out
                                 </button>
                             </Link>
@@ -67,7 +67,7 @@ export default function RootLayout({
                                 </Link>
                                 <div className='w-40 md:w-48 lg:w-52 desktop:w-60 relative leading-[2.25]'>
                                     <input
-                                        className='block pr-2 pl-3 py-1 shadow-sm shadow-black w-4/5 rounded-[15px] box-content text-xs md:text-sm lg:text-md desktop:text-lg'
+                                        className='block pr-2 pl-3 py-1 shadow-sm shadow-black w-4/5 rounded-[15px] box-content text-xs md:text-sm lg:text-base desktop:text-lg'
                                         type='text'
                                         placeholder='Search'
                                     />

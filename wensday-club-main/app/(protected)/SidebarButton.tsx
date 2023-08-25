@@ -16,7 +16,7 @@ export default function SidebarButton({
         active = true;
 
     const sidebarClassName =
-        "block mx-auto w-2/3 text-[0.5rem] sm:text-xs md:text-sm lg:text-md desktop:text-lg py-1 desktop:py-2 font-bold capitalize" +
+        "block mx-auto w-2/3 text-[0.5rem] sm:text-xs md:text-sm lg:text-base desktop:text-lg py-1 desktop:py-2 font-bold capitalize" +
         " ";
     const sidebarActiveClassName =
         "bg-debian-red text-white bg-opacity-75 hover:bg-opacity-100";
