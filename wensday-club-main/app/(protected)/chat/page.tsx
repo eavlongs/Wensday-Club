@@ -5,7 +5,7 @@ export default function Chat() {
         <div className="w-[80%] m-auto p-20">
             <p className="text-2xl font-bold">Chat</p>
             <div className="w-[100%]">
-                <div className="border-2 border-gray-500 mt-2 shadow-xl shadow-gray-200">
+                <div className="border-2 border-gray-500 mt-2 shadow-xl shadow-gray-200 min-w-[600px]">
                     <div className="grid grid-cols-[15%_70%_15%]">
                         <div className="m-auto">
                             <img
@@ -21,7 +21,7 @@ export default function Chat() {
                             <p className="text-debian-red text-xs">
                                 3 days ago
                             </p>
-                            <p className="text-sm max-h-[]">
+                            <p className="text-sm max-h-[20px] overflow-hidden">
                                 Lorem, ipsum dolor sit amet consectetur
                                 adipisicing elit. Cum fuga similique modi ad
                                 assumenda veritatis doloribus id harum. Ipsam,
@@ -33,7 +33,7 @@ export default function Chat() {
                         </div>
                     </div>
                 </div>
-                <div className="border-2 border-gray-500 mt-2 shadow-xl shadow-gray-200">
+                <div className="border-2 border-gray-500 mt-2 shadow-xl shadow-gray-200 min-w-[600px]">
                     <div className="grid grid-cols-[15%_70%_15%]">
                         <div className="m-auto">
                             <img
@@ -49,7 +49,7 @@ export default function Chat() {
                             <p className="text-debian-red text-xs">
                                 3 days ago
                             </p>
-                            <p className="text-sm">
+                            <p className="text-sm max-h-[20px] overflow-hidden">
                                 Lorem, ipsum dolor sit amet consectetur
                                 adipisicing elit. Cum fuga similique modi ad
                                 assumenda veritatis doloribus id harum. Ipsam,
@@ -61,7 +61,7 @@ export default function Chat() {
                         </div>
                     </div>
                 </div>
-                <div className="border-2 border-gray-500 mt-2 shadow-xl shadow-gray-200">
+                <div className="border-2 border-gray-500 mt-2 shadow-xl shadow-gray-200 min-w-[600px]">
                     <div className="grid grid-cols-[15%_70%_15%]">
                         <div className="m-auto">
                             <img
@@ -77,7 +77,7 @@ export default function Chat() {
                             <p className="text-debian-red text-xs">
                                 3 days ago
                             </p>
-                            <p className="text-sm">
+                            <p className="text-sm max-h-[20px] overflow-hidden">
                                 Lorem, ipsum dolor sit amet consectetur
                                 adipisicing elit. Cum fuga similique modi ad
                                 assumenda veritatis doloribus id harum. Ipsam,
@@ -89,7 +89,7 @@ export default function Chat() {
                         </div>
                     </div>
                 </div>
-                <div className="border-2 border-gray-500 mt-2 shadow-xl shadow-gray-200">
+                <div className="border-2 border-gray-500 mt-2 shadow-xl shadow-gray-200 min-w-[600px]">
                     <div className="grid grid-cols-[15%_70%_15%]">
                         <div className="m-auto">
                             <img
@@ -105,7 +105,7 @@ export default function Chat() {
                             <p className="text-debian-red text-xs">
                                 3 days ago
                             </p>
-                            <p className="text-sm">
+                            <p className="text-sm max-h-[20px] overflow-hidden">
                                 Lorem, ipsum dolor sit amet consectetur
                                 adipisicing elit. Cum fuga similique modi ad
                                 assumenda veritatis doloribus id harum. Ipsam,
