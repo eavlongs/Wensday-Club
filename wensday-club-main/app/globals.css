@@ -11,7 +11,7 @@
 }
 
 .like-btn:hover::after {
-    content: "11";
+    content: "Like";
     vertical-align: middle;
 }
 

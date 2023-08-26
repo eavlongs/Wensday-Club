@@ -7,25 +7,25 @@ export default function Page() {
     const [editPassword, setEditPassword] = useState(false);
     return (
         <>
-            <div className='hugecontainer w-full h-[750px] border-gray-700'>
-                <div className='upper-container  md:w-[900px] lg:w-[1100px] h-[210px]  pt-6 pl-6 flex'>
-                    <div className='right-box md:w-[130px] lg:w-[190px] h-[100px] absolute md:text-md'>
+            <div className='hugecontainer w-full border-gray-700 pb-10'>
+                <div className='relative upper-container w-full h-[210px] pt-6 pl-6 flex'>
+                    <div className='right-box md:w-[130px] lg:w-[190px] absolute md:text-md'>
                         <button
-                            className='md:w-[130px] lg:w-[160px] bg-debian-red hover:bg-red-700 text-white lg:text-sm font-bold py-2 px-4 rounded-full  '
+                            className='absolute z-[2] md:w-[130px] lg:w-[160px] bg-debian-red hover:bg-red-700 text-white lg:text-sm font-bold py-2 px-4 rounded-full  '
                             onClick={() => setEditPassword(true)}
                         >
                             Change Password
                         </button>
                     </div>
-                    <div className='left-box w-[600px] h-[220px] flex  items-center justify-center mx-auto'>
+                    <div className='left-box w-[600px] h-[220px] flex items-center justify-center gap-x-3 mx-auto'>
                         <div className='left w-[250px] h-[220px] '>
-                            <div className='max-w-[100px] max-h-[100px] w-[calc(6rem+6vw)] h-[calc(6rem+6vw)] relative '>
+                            <div className='max-w-[100px] max-h-[100px] w-[calc(6rem+6vw)] h-[calc(6rem+6vw)] relative ml-auto'>
                                 <Image
                                     src='/Olivier_1500_Trptch.jpg'
                                     fill={true}
                                     alt='profile picture'
                                     objectFit='cover'
-                                    className='rounded-[50%] ml-36'
+                                    className='rounded-[50%]'
                                 />
                             </div>
                             <div className='w-[170px] py-3 ml-20'>
@@ -37,8 +37,8 @@ export default function Page() {
                                 />
                             </div>
                         </div>
-                        <div className='right w-[250px] h-[220px]  px-3 '>
-                            <div className='pt-4 pb-2 '>
+                        <div className='right w-[250px] h-[220px]'>
+                            <div className='pt-4 pb-2'>
                                 <button className='w-[160px] bg-debian-red hover:bg-red-700 text-white font-bold py-2 px-4 text-xs rounded-full'>
                                     <a href='/'>Upload New Profile</a>
                                 </button>
@@ -60,7 +60,7 @@ export default function Page() {
                     </div>
                 </div>
                 <div
-                    className='block w-full h-[280px] rounded-lg bg-white bg-cover p-6 shadow-lg dark:bg-neutral-700'
+                    className='block w-full h-[280px] rounded-lg bg-white bg-cover bg-center p-6 shadow-lg dark:bg-neutral-700'
                     style={{ backgroundImage: 'url("/sonflower.jpg")' }}
                 >
                     <div className='two-button w-[220px] h-[200px] pt-40'>
@@ -80,19 +80,18 @@ export default function Page() {
                         </button>
                     </div>
                 </div>
-                <div className='buttom w-full h-[180px] pt-6 pl-6 flex space-x-10 '>
-                    <div className='md:w-[200px] lg:w-[400px] h-[180px]  pt-2 px-2 border-2 border-gray-700 rounded-xl '>
-                        <div className='md:w-[100px] lg:w-[160px] bg-red-500  text-white font-bold py-2 px-1 rounded-full text-sm text-center mx-auto'>
+                <div className='buttom w-full mt-6 ml-6 flex gap gap-x-10'>
+                    <div className='flex flex-col md:w-[200px] lg:w-[400px] h-[250px] pt-2 pb-4 px-2 border-2 border-gray-700 rounded-xl '>
+                        <p className='md:w-[100px] lg:w-[160px] bg-red-500 text-white font-bold py-2 px-1 rounded-full text-sm text-center mx-auto'>
                             About Me
-                        </div>
+                        </p>
                         <textarea
-                            rows={4}
                             cols={36}
                             name='commentfield'
                             defaultValue={
                                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "
                             }
-                            className='mt-3 mx-7 focus:outline-none text-justify  md:w-[100px] lg:w-[320px]'
+                            className='flex-1 mt-3 mx-7 focus:outline-none text-justify  md:w-[100px] lg:w-[320px] resize-none'
                         />
 
                         {/* <div className='About_Me_text font-mono font-size-sm '>
@@ -105,10 +104,10 @@ export default function Page() {
                          </div> */}
                     </div>
 
-                    <div className='w-[400px] h-[180px] pt-2 px-9 border-2 border-gray-700 rounded-xl'>
-                        <div className='w-[160px] bg-red-500  text-white font-bold py-2 px-3 rounded-full text-sm text-center mx-auto'>
+                    <div className='w-[400px] h-[250px] pt-2 px-9 border-2 border-gray-700 rounded-xl'>
+                        <p className='w-[160px] bg-red-500  text-white font-bold py-2 px-3 rounded-full text-sm text-center mx-auto'>
                             Add Hobbies
-                        </div>
+                        </p>
                         <div className='About_Me_text font-mono font-size-sm mt-2'>
                             <ul className='list-disc'>
                                 <li>
@@ -134,16 +133,13 @@ export default function Page() {
                             </ul>
                         </div>
                     </div>
-                    <div className='md:w-[200px] h-[180px]'>
-                        <div className='mt-[140px] lg:ml-[78px] md:ml-[100px]'>
-                            <button
-                                className='w-[100px] shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded'
-                                type='button'
-                            >
-                                Save
-                            </button>
-                        </div>
-                    </div>
+
+                    <button
+                        className='block self-end w-[100px] h-[40px] shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded ml-auto'
+                        type='button'
+                    >
+                        Save
+                    </button>
                 </div>
             </div>
             {editPassword ? (

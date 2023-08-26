@@ -6,73 +6,69 @@ export default function OwnProfile({ onEdit }: { onEdit: () => void }) {
     return (
         <>
             <div
-                className='block max-w-[1200px] h-[280px] rounded-lg bg-white bg-cover p-6 shadow-lg dark:bg-neutral-700'
+                className='block w-full h-[280px] rounded-lg bg-white bg-cover bg-center p-6 shadow-lg dark:bg-neutral-700'
                 style={{ backgroundImage: 'url("/sonflower.jpg")' }}
             >
                 <div className='two-button w-[220px] h-[200px] pt-40'>
-                    <div className='first-button pb-2 '>
-                        <button
-                            type='button'
-                            className='w-[180px] inline-block rounded border-2 border-neutral-50 px-6 pb-[6px] pt-2 text-xs font-medium uppercase leading-normal text-neutral-50 transition duration-150 ease-in-out hover:border-neutral-100 hover:bg-neutral-500 hover:bg-opacity-10 hover:text-neutral-100 focus:border-neutral-100 focus:text-neutral-100 focus:outline-none focus:ring-0 active:border-neutral-200 active:text-neutral-200 dark:hover:bg-neutral-100 dark:hover:bg-opacity-10 '
-                            data-te-ripple-init=''
-                        >
-                            <a href=''>Upload New Cover</a>
-                        </button>
-                    </div>
                     <button
                         type='button'
-                        className='w-[180px] inline-block rounded border-2 border-neutral-50 px-6 pb-[6px] pt-2 text-xs font-medium uppercase leading-normal text-neutral-50 transition duration-150 ease-in-out hover:border-neutral-100 hover:bg-neutral-500 hover:bg-opacity-10 hover:text-neutral-100 focus:border-neutral-100 focus:text-neutral-100 focus:outline-none focus:ring-0 active:border-neutral-200 active:text-neutral-200 dark:hover:bg-neutral-100 dark:hover:bg-opacity-10'
+                        className='w-[180px] mb-2 inline-block rounded border-2 border-neutral-50 px-6 pb-[6px] pt-2 text-xs font-medium uppercase leading-normal text-neutral-50 transition duration-150 ease-in-out hover:border-neutral-100 hover:text-neutral-100 focus:border-neutral-100 focus:text-neutral-100 focus:outline-none focus:ring-0 active:border-neutral-200 active:text-neutral-200 bg-black bg-opacity-25 hover:bg-opacity-40'
                         data-te-ripple-init=''
                     >
-                        <a href=''>Delete Cover</a>
+                        Upload New Cover
+                    </button>
+                    <button
+                        type='button'
+                        className='w-[180px] inline-block rounded border-2 border-neutral-50 px-6 pb-[6px] pt-2 text-xs font-medium uppercase leading-normal text-neutral-50 transition duration-150 ease-in-out hover:border-neutral-100 hover:text-neutral-100 focus:border-neutral-100 focus:text-neutral-100 focus:outline-none focus:ring-0 active:border-neutral-200 active:text-neutral-200 bg-black bg-opacity-25 hover:bg-opacity-40'
+                        data-te-ripple-init=''
+                    >
+                        Delete Cover
                     </button>
                 </div>
             </div>
 
-            <div className='under_cover cover w-[990px] h-[200px] ml-52 flex items-start '>
+            <div className='under_cover cover w-full px-10 flex items-start py-7 gap-x-7'>
                 <div className='max-w-[150px] max-h-[150px] w-[calc(6rem+6vw)] h-[calc(6rem+6vw)] relative '>
                     <Image
                         src='/Olivier_1500_Trptch.jpg'
                         fill={true}
                         alt='profile picture'
-                        className='rounded-[50%] my-9 object-cover'
+                        className='rounded-[50%] object-cover'
                     />
                 </div>
 
-                <div className='user_info w-[150px] h-[150px] my-5 '>
-                    <div className='profile mt-11'>
-                        <div className='user_name w-[150px] h-[30px] flex items-center justify-center text-2xl '>
+                <div className='user_info self-center'>
+                    <div className='profile'>
+                        <div className='user_name text-2xl mb-2'>
                             <h1>Yilong Ma</h1>
                         </div>
 
-                        <div className='followers w-[800px] h-[30px] flex items-strech text-xl '>
-                            <button className='pl-6 hover:text-sky-700'>
+                        <div className='followers flex gap-x-8 text-xl '>
+                            <button className='hover:text-sky-700'>
                                 <a href=''>12 posts</a>
                             </button>
-                            <button className='pl-24 hover:text-sky-700'>
+                            <button className='hover:text-sky-700'>
                                 <Link href='/follower'>100k followers</Link>{" "}
                             </button>
-                            <button className='pl-24 hover:text-sky-700'>
+                            <button className='hover:text-sky-700'>
                                 <Link href='/following'>2 followings</Link>
                             </button>
                         </div>
                     </div>
                 </div>
 
-                <div className='pt-4 pb-4 lg:pl-[350px] '>
-                    <button
-                        className='w-[230px] h-[47px] bg-debian-red hover:bg-red-700 text-white font-bold py-2 px-4 rounded-[20px]'
-                        onClick={() => onEdit()}
-                    >
-                        Edit
-                    </button>
-                </div>
+                <button
+                    className='block w-[230px] bg-debian-red hover:bg-red-700 text-white font-bold text-lg py-2 px-4 rounded-[20px] ml-auto'
+                    onClick={() => onEdit()}
+                >
+                    Edit
+                </button>
             </div>
-            <div className='w-[1200px] h-[715px] border-black  pt-6 pl-6 flex'>
-                <div className='w-[400px] h-[350px]  pt-6 pl-6 border-2 border-gray-700 rounded-xl '>
-                    <div className='w-[200px] h-[40px] bg-red-500  text-white font-bold py-2 px-3 rounded-full text-xl text-center'>
+            <div className='w-[1200px] border-black px-6 flex'>
+                <div className='w-[400px] h-[350px] py-4 px-3 border-2 border-gray-700 rounded-xl '>
+                    <p className='inline-block bg-red-500 text-lg text-white font-bold py-1 px-10 rounded-full text-center'>
                         About Me
-                    </div>
+                    </p>
                     <div className='About_Me_text font-mono font-size-sm mt-4 md-0'>
                         <p>
                             “Preoccupied with a single leaf... you won't see the
@@ -81,7 +77,7 @@ export default function OwnProfile({ onEdit }: { onEdit: () => void }) {
                         </p>
                     </div>
                     <div className='mt-9'>
-                        <div className='w-[200px] h-[40px] bg-red-500  text-white font-bold py-2 px-3 rounded-full text-xl text-center'>
+                        <div className='inline-block bg-red-500 text-lg text-white font-bold py-1 px-10 rounded-full text-center'>
                             Hobbies
                         </div>
                         <div className='About_Me_text font-mono font-size-sm mt-2'>
