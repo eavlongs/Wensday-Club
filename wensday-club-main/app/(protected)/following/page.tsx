@@ -116,7 +116,7 @@ function User({
 }) {
     return (
         <div className='flex w-full py-2 px-5 my-2 border-black border-[1px] rounded-[10px] shadow-md hover:shadow-lg cursor-pointer'>
-            <Link href={"/profile/" + user.id}>
+            <Link href={"/profile/" + user.id} prefetch={false}>
                 <div className='relative min-w-[3rem] w-12 lg:w-16 desktop:w-20 aspect-square'>
                     <Image
                         src={user.profilePicture}

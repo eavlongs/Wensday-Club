@@ -1,5 +1,6 @@
 import { IonIcon } from "@ionic/react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function OwnProfile({ onEdit }: { onEdit: () => void }) {
     return (
@@ -29,7 +30,7 @@ export default function OwnProfile({ onEdit }: { onEdit: () => void }) {
             </div>
 
             <div className='under_cover cover w-[990px] h-[200px] ml-52 flex items-start '>
-                <div className='max-w-[150px] max-h-[110px] w-[calc(6rem+6vw)] h-[calc(6rem+6vw)] relative '>
+                <div className='max-w-[150px] max-h-[150px] w-[calc(6rem+6vw)] h-[calc(6rem+6vw)] relative '>
                     <Image
                         src='/Olivier_1500_Trptch.jpg'
                         fill={true}
@@ -49,16 +50,16 @@ export default function OwnProfile({ onEdit }: { onEdit: () => void }) {
                                 <a href=''>12 posts</a>
                             </button>
                             <button className='pl-24 hover:text-sky-700'>
-                                <a href=''>100k followers</a>{" "}
+                                <Link href='/follower'>100k followers</Link>{" "}
                             </button>
                             <button className='pl-24 hover:text-sky-700'>
-                                <a href=''>2 followings</a>
+                                <Link href='/following'>2 followings</Link>
                             </button>
                         </div>
                     </div>
                 </div>
 
-                <div className='pt-4 pb-4 pl-[500px]'>
+                <div className='pt-4 pb-4 lg:pl-[350px] '>
                     <button
                         className='w-[230px] h-[47px] bg-debian-red hover:bg-red-700 text-white font-bold py-2 px-4 rounded-[20px]'
                         onClick={() => onEdit()}

@@ -28,9 +28,6 @@ export default function Page() {
 
     return (
         <div>
-            <button onClick={() => setShowOwnProfile(!showOwnProfile)}>
-                Edit
-            </button>
             {showOwnProfile ? (
                 <OwnProfile
                     onEdit={() => {
