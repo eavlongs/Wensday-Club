@@ -1,7 +1,10 @@
 "use client";
 
-import Image from "next/image";
 import { IonIcon } from "@ionic/react";
+import Link from "next/link";
+import { useState } from "react";
+import Image from "next/image";
+import "../globals.css";
 
 export default function Page({ params }: { params: { id: string } }) {
     return (
