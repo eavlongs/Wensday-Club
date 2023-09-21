@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+    --sidebar-width: min(310px, 15vw);
+}
+
 .flex-center {
     @apply flex items-center justify-center;
 }

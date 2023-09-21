@@ -4,13 +4,11 @@ import { IonIcon } from "@ionic/react";
 import Link from "next/link";
 import { useState } from "react";
 import Image from "next/image";
-
-
+import Layout from "@/components/Layout";
 
 export default function OwnProfile({ onEdit }: { onEdit: () => void }) {
-  
     return (
-        <>
+        <Layout>
             <div
                 className='block w-full h-[280px] rounded-lg bg-white bg-cover bg-center p-6 shadow-lg dark:bg-neutral-700'
                 style={{ backgroundImage: 'url("/sonflower.jpg")' }}
@@ -65,7 +63,7 @@ export default function OwnProfile({ onEdit }: { onEdit: () => void }) {
 
                 <button
                     className='block w-[230px] bg-debian-red hover:bg-red-700 text-white font-bold text-lg py-2 px-4 rounded-[20px] ml-auto'
-                    onClick={() => window.location.href='/edit'}
+                    onClick={() => (window.location.href = "/edit")}
                 >
                     Edit
                 </button>
@@ -95,7 +93,6 @@ export default function OwnProfile({ onEdit }: { onEdit: () => void }) {
                     </div>
                 </div>
 
-             
                 {/* <div className="something-to-say-and-postButton bg-red-300 h-[90px]">
             <div className="somthing-to-say w-[900px] h-[90px] ml-[30px] flex">
                 <div className='font-bold text-2xl text-gray-500 pt-4 pb-4'>
@@ -112,6 +109,6 @@ export default function OwnProfile({ onEdit }: { onEdit: () => void }) {
             </div>
             </div> */}
             </div>
-        </>
+        </Layout>
     );
 }

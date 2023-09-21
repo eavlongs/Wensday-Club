@@ -6,6 +6,7 @@ import Image from "next/image";
 import { formatCompactNumber } from "@/app/helper";
 import { useState } from "react";
 import Link from "next/link";
+import Layout from "@/components/Layout";
 
 type UserType = {
     id: string;
@@ -82,7 +83,7 @@ export default function Page() {
     }
 
     return (
-        <>
+        <Layout>
             <div className='w-4/5 mx-auto mt-5 min-w-[390px]'>
                 <h1
                     className={
@@ -103,7 +104,7 @@ export default function Page() {
                     );
                 })}
             </div>
-        </>
+        </Layout>
     );
 }
 

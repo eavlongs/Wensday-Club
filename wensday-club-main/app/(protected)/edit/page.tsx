@@ -1,12 +1,13 @@
 "use client";
 import ChangePassword from "@/components/ChangePassword";
+import Layout from "@/components/Layout";
 import Image from "next/image";
 import { useState } from "react";
 
 export default function Page() {
     const [editPassword, setEditPassword] = useState(false);
     return (
-        <>
+        <Layout>
             <div className='hugecontainer w-full border-gray-700 pb-10'>
                 <div className='relative upper-container w-full h-[210px] pt-6 pl-6 flex'>
                     <div className='right-box md:w-[130px] lg:w-[190px] absolute md:text-md'>
@@ -145,6 +146,6 @@ export default function Page() {
             {editPassword ? (
                 <ChangePassword onExitPopup={() => setEditPassword(false)} />
             ) : null}
-        </>
+        </Layout>
     );
 }

@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 
 interface Message {
     id: string;
@@ -11,7 +11,8 @@ interface Message {
     time: Date;
 }
 
-const messages: Array<Message> = [
+// sorted descendingly
+const _messages: Array<Message> = [
     {
         id: "123",
         text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. fadsfa fadsfasf afsfsfs afafsadf",
@@ -47,9 +48,28 @@ const messages: Array<Message> = [
         receiverID: "me",
         time: new Date("December 17, 1995 03:24:00"),
     },
+    {
+        id: "678",
+        text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. fadsfa fadsfasf afsfsfs afafsadf",
+        senderID: "me",
+        receiverID: "my friend",
+        time: new Date("December 17, 1995 03:24:00"),
+    },
+    {
+        id: "789",
+        text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. fadsfa fadsfasf afsfsfs afafsadf",
+        senderID: "me",
+        receiverID: "my friend",
+        time: new Date("December 17, 1995 03:24:00"),
+    },
+    {
+        id: "890",
+        text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. fadsfa fadsfasf afsfsfs afafsadf",
+        senderID: "me",
+        receiverID: "my friend",
+        time: new Date("December 17, 1995 03:24:00"),
+    },
 ];
-
-messages.slice().reverse();
 
 export default function Page() {
     const [chatID, setChatID] = useState("");
@@ -81,6 +101,29 @@ function Chat({ onClick }: { onClick: (id: string) => void }) {
 }
 
 function InsideChat({ onExit }: { onExit: () => void }) {
+    const [messages, setMessages] = useState(_messages);
+    const messageInput = useRef<HTMLInputElement>(null);
+
+    const sendMessage = () => {
+        if (messageInput.current && messageInput.current.value !== "") {
+            let newMessage: Message = {
+                id: "obj" + Math.floor(Math.random() * 10000),
+                text: messageInput.current.value,
+                senderID: "me",
+                receiverID: "my friend",
+                time: new Date(),
+            };
+
+            setMessages((prev) => [newMessage, ...prev]);
+
+            messageInput.current.value = "";
+        }
+    };
+
+    useEffect(() => {
+        console.log(messages);
+    }, [messages]);
+
     return (
         <>
             {/* <div className="chat w-[700px] h-[500px]  py-20 px-20 items-center justify-center ml-[300px] mt-[200px] "> */}
@@ -141,41 +184,46 @@ function InsideChat({ onExit }: { onExit: () => void }) {
                         </div>
                         {/* end chat box action */}
                     </div>
-                    <div className='flex-1 px-4 py-2 overflow-y-auto'>
+                    <div className='flex-1 px-4 py-2 overflow-y-auto flex flex-col-reverse'>
                         {/* chat message */}
                         {messages.map((message, index) => {
                             return (
                                 <Message
                                     message={message}
                                     last={
-                                        index === messages.length - 1 ||
+                                        index === 0 ||
                                         message.senderID !==
-                                            messages[index + 1].senderID
+                                            messages[index - 1].senderID
                                     }
                                     key={message.id}
                                 />
                             );
                         })}
                     </div>
-                    <div className='flex items-center border-t p-2 h-[50px]'>
+                    <div className='flex items-center border-t p-2'>
                         {/* chat input action */}
                         {/* end chat input action */}
                         <div className='w-full mx-1 '>
                             <input
-                                className='w-full  border-none focus:outline-none'
+                                className='w-full border-none focus:outline-none text-sm'
                                 type='text'
                                 placeholder='Write A Message'
+                                ref={messageInput}
+                                onKeyUp={(event) => {
+                                    if (event.keyCode === 13) sendMessage();
+                                }}
                             />
                         </div>
                         {/* chat send action */}
-                        <div>
-                            <button
-                                className='hover:bg-indigo-50 rounded-full p-2 relative w-[33px] aspect-square mr-2'
-                                type='button'
-                            >
-                                <Image src='/send.png' alt='send icon' fill />
-                            </button>
-                        </div>
+
+                        <button
+                            className='hover:bg-indigo-50 rounded-full p-1 relative w-[25px] aspect-square mr-2'
+                            type='button'
+                            onClick={sendMessage}
+                        >
+                            <Image src='/send.png' alt='send icon' fill />
+                        </button>
+
                         {/* end chat send action */}
                     </div>
                 </div>
@@ -190,7 +238,7 @@ function InsideChat({ onExit }: { onExit: () => void }) {
 function User({ onClick, id }: { onClick: (id: string) => void; id: string }) {
     return (
         <div
-            className='w-full border-2 border-gray-500 mt-[0.1rem] shadow-xl shadow-gray-200 grid grid-cols-[15%_auto_15%] items-center cursor-pointer rounded-lg py-2'
+            className='w-full border-2 border-gray-500 mt-[0.1rem] grid grid-cols-[15%_auto_15%] items-center cursor-pointer rounded-lg py-2 hover:bg-gray-100'
             onClick={() => onClick(id)}
         >
             <div className='mx-auto'>
@@ -226,14 +274,20 @@ function Message({
     last: boolean;
 }) {
     return message.senderID !== "me" ? (
-        <div className='flex items-end my-2 w-full'>
+        <div
+            className={
+                (last ? "mb-2" : null) + " flex items-end my-[0.12rem] w-full"
+            }
+        >
             <div className='relative h-[2.5rem] aspect-square mr-4'>
-                <Image
-                    src='/Olivier_1500_Trptch.jpg'
-                    alt='profile picture'
-                    fill
-                    className='rounded-full object-cover'
-                />
+                {last ? (
+                    <Image
+                        src='/Olivier_1500_Trptch.jpg'
+                        alt='profile picture'
+                        fill
+                        className='rounded-full object-cover'
+                    />
+                ) : null}
             </div>
             <div
                 className={
@@ -241,10 +295,7 @@ function Message({
                     " max-w-[70%] bg-red-600 text-white p-2 rounded-lg text-xs"
                 }
             >
-                <p>
-                    {message.senderID} Lorem ipsum dolor sit amet, consectetur
-                    adipisicing elit. fadsfa fadsfasf afsfsfs a fafsadf
-                </p>
+                <p>{message.text}</p>
                 {/* arrow */}
                 {last && (
                     <div className='absolute left-0 bottom-3 transform -translate-x-1/2 rotate-45 w-2 h-2 bg-red-600' />
@@ -255,14 +306,11 @@ function Message({
     ) : (
         <div
             className={
-                (last ? "relative" : null) +
-                " ml-auto max-w-[70%] bg-indigo-100 text-gray-800 p-2 rounded-lg my-2 text-xs"
+                (last ? "relative mb-2" : null) +
+                " ml-auto max-w-[70%] bg-indigo-100 text-gray-800 p-2 rounded-lg my-[0.12rem] text-xs"
             }
         >
-            <div>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem
-                ipsum dolor sit amet, consectetur adipisicing elit.
-            </div>
+            <div>{message.text}</div>
             {/* arrow */}
             {last && (
                 <div className='absolute right-0 bottom-3 transform translate-x-1/2 rotate-45 w-2 h-2 bg-indigo-100' />
