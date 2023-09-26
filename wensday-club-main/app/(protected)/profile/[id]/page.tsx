@@ -4,7 +4,7 @@ import { IonIcon } from "@ionic/react";
 import Link from "next/link";
 import { useState } from "react";
 import Image from "next/image";
-import "../globals.css";
+import "@/app/globals.css";
 import Layout from "@/components/Layout";
 
 export default function Page({ params }: { params: { id: string } }) {
