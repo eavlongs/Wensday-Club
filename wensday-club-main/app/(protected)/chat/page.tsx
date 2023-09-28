@@ -1,5 +1,6 @@
 "use client";
 
+import Layout from "@/components/Layout";
 import Image from "next/image";
 import { useState, useRef, useEffect } from "react";
 
@@ -73,10 +74,14 @@ const _messages: Array<Message> = [
 
 export default function Page() {
     const [chatID, setChatID] = useState("");
-    return chatID.length === 0 ? (
-        <Chat onClick={(id) => setChatID(id)} />
-    ) : (
-        <InsideChat onExit={() => setChatID("")} />
+    return (
+        <Layout>
+            {chatID.length === 0 ? (
+                <Chat onClick={(id) => setChatID(id)} />
+            ) : (
+                <InsideChat onExit={() => setChatID("")} />
+            )}
+        </Layout>
     );
 }
 

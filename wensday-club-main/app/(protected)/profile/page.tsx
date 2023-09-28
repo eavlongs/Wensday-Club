@@ -127,10 +127,7 @@ export default function Page({ onEdit }: { onEdit: () => void }) {
                 noModule
                 src='https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js'
             ></script>
-            <div
-                className='block w-full h-[12rem] md:h-[13rem] lg:h-[15rem] desktop:h-[17rem] bg-cover bg-center p-6 shadow-lg bg-neutral-700 relative'
-                // style={{ backgroundImage: 'url("/sonflower.jpg")' }}
-            >
+            <div className='block w-full h-[12rem] md:h-[13rem] lg:h-[15rem] desktop:h-[17rem] bg-cover bg-center p-6 shadow-lg bg-neutral-700 relative'>
                 <Image
                     src='/sonflower.jpg'
                     fill

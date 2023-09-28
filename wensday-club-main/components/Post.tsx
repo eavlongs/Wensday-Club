@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { IonIcon } from "@ionic/react";
+import Popup from "./Popup";
 
 export interface PostProp {
     id: string;
@@ -207,36 +208,24 @@ export function Share({
     onExitPopup: () => void;
 }) {
     return (
-        <div>
-            <div
-                className='backdrop-blur-sm bg-gray-600/50 w-screen h-screen fixed top-0 left-0'
-                onClick={onExitPopup}
-            ></div>
-            <div className='border-[1px] border-black bg-white w-[500px] fixed top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] h-[350px]'>
-                <p className='text-center font-bold'>Share this Post</p>
-                <div className='flex mt-5 ml-5'>
-                    <img
-                        src='/Olivier_1500_Trptch.jpg'
-                        alt=''
-                        className='rounded-[50%] max-w-[300px] max-h[300px]] w-[60px] h-[60px] object-cover'
-                    />
-                    <div className='ml-5'>
-                        <textarea
-                            placeholder='Write something about this post'
-                            className='relative top-0 Sml-5 bg-gray-100 border-white w-[350px] h-[200px] '
-                        />
-                    </div>
-                </div>
-                <div className='flex w-[80%] ml-14 mt-5 justify-between text-center'>
-                    <button className='border-[1px] border-white bg-debian-red text-white px-3 py-2 font-bold rounded-[10px]'>
-                        Cancel
-                    </button>
-                    <button className='border-[1px] border-white bg-debian-red text-white px-3 py-2 font-bold rounded-[10px]'>
-                        Share Now
-                    </button>
-                </div>
+        <Popup
+            onExit={onExitPopup}
+            submitText='Share Now'
+            onSubmit={() => console.log("shared")}
+        >
+            <p className='text-center font-bold text-lg'>Share this Post</p>
+            <div className='flex mt-5 '>
+                <img
+                    src='/Olivier_1500_Trptch.jpg'
+                    alt=''
+                    className='rounded-[50%] max-w-[300px] max-h[300px]] w-[60px] h-[60px] object-cover'
+                />
+                <textarea
+                    placeholder='Write something about this post'
+                    className='relative top-0 bg-gray-100 border-white ml-5 w-[350px] h-[200px] '
+                />
             </div>
-        </div>
+        </Popup>
     );
 }
 
@@ -248,76 +237,63 @@ export function Report({
     onExitPopup: () => void;
 }) {
     return (
-        <div>
-            <div
-                className='backdrop-blur-sm bg-gray-600/50 w-screen h-screen fixed top-0 left-0'
-                onClick={onExitPopup}
-            ></div>
-            <div className='border-[1px] border-black bg-white w-[500px] fixed top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] h-[420px] rounded-[10px]'>
-                <p className='text-center font-bold'>Report</p>
-                <p className='ml-10 mt-8 font-bold text-lg'>
-                    What is your Problem?
-                </p>
-                <div>
-                    <form className='ml-5 mt-5'>
-                        <div className='ml-3 border-[1px] border-white bg-gray-100 px-5 py-1 rounded-[30px] mb-3 w-[90%]'>
-                            <input
-                                type='checkbox'
-                                value='violence_post'
-                                name='violence_post'
-                            />
-                            <label htmlFor='violence_post' className='ml-3'>
-                                Violence Post
-                            </label>
-                        </div>
-                        <div className='ml-3 border-[1px] border-white bg-gray-100 px-5 py-1 rounded-[30px] mb-3 w-[90%]'>
-                            <input
-                                type='checkbox'
-                                value='violence_post'
-                                name='violence_post'
-                            />
-                            <label htmlFor='violence_post' className='ml-3'>
-                                Violence Post
-                            </label>
-                        </div>
-                        <div className='ml-3 border-[1px] border-white bg-gray-100 px-5 py-1 rounded-[30px] mb-3 w-[90%]'>
-                            <input
-                                type='checkbox'
-                                value='violence_post'
-                                name='violence_post'
-                            />
-                            <label htmlFor='violence_post' className='ml-3'>
-                                Violence Post
-                            </label>
-                        </div>
-                        <div className='ml-3 border-[1px] border-white bg-gray-100 px-5 py-1 rounded-[30px] mb-3 w-[90%]'>
-                            <input
-                                type='checkbox'
-                                value='violence_post'
-                                name='violence_post'
-                            />
-                            <label htmlFor='violence_post' className='ml-3'>
-                                Violence Post
-                            </label>
-                        </div>
-                        <div className='ml-3 border-[1px] border-white bg-gray-100 px-5 py-1 rounded-[30px] mb-3 w-[90%]'>
-                            <input
-                                type='text'
-                                placeholder='Other'
-                                className='bg-gray-100 w-[100%]'
-                            />
-                        </div>
-                    </form>
-                    <div className='flex w-[85%] ml-10 mt-5 justify-between text-center'>
-                        <button className='border-[1px] border-white bg-debian-red text-white px-3 py-2 font-bold rounded-[10px]'>
-                            Cancel
-                        </button>
-                        <button className='border-[1px] border-white bg-debian-red text-white px-3 py-2 font-bold rounded-[10px]'>
-                            Submit
-                        </button>
-                    </div>
+        <Popup
+            onExit={onExitPopup}
+            submitText='Report'
+            onSubmit={() => console.log("reported")}
+        >
+            <p className='text-center font-bold text-lg'>Report</p>
+            <p className='mt-2 font-bold'>What is your Problem?</p>
+
+            <form className='mt-5 mb-5 w-[90%]'>
+                <div className='ml-3 border-[1px] border-white bg-gray-100 px-5 py-1 rounded-[30px] mb-3 w-[90%]'>
+                    <input
+                        type='checkbox'
+                        value='violence_post'
+                        name='violence_post'
+                    />
+                    <label htmlFor='violence_post' className='ml-3'>
+                        Violence Post
+                    </label>
                 </div>
-            </div>
-        </div>
+                <div className='ml-3 border-[1px] border-white bg-gray-100 px-5 py-1 rounded-[30px] mb-3 w-[90%]'>
+                    <input
+                        type='checkbox'
+                        value='violence_post'
+                        name='violence_post'
+                    />
+                    <label htmlFor='violence_post' className='ml-3'>
+                        Violence Post
+                    </label>
+                </div>
+                <div className='ml-3 border-[1px] border-white bg-gray-100 px-5 py-1 rounded-[30px] mb-3 w-[90%]'>
+                    <input
+                        type='checkbox'
+                        value='violence_post'
+                        name='violence_post'
+                    />
+                    <label htmlFor='violence_post' className='ml-3'>
+                        Violence Post
+                    </label>
+                </div>
+                <div className='ml-3 border-[1px] border-white bg-gray-100 px-5 py-1 rounded-[30px] mb-3 w-[90%]'>
+                    <input
+                        type='checkbox'
+                        value='violence_post'
+                        name='violence_post'
+                    />
+                    <label htmlFor='violence_post' className='ml-3'>
+                        Violence Post
+                    </label>
+                </div>
+                <div className='ml-3 border-[1px] border-white bg-gray-100 px-5 py-1 rounded-[30px] mb-3 w-[90%]'>
+                    <input
+                        type='text'
+                        placeholder='Other'
+                        className='bg-gray-100 w-[100%]'
+                    />
+                </div>
+            </form>
+        </Popup>
     );
 }

@@ -6,78 +6,83 @@ import { useState } from "react";
 
 export default function Page() {
     const [editPassword, setEditPassword] = useState(false);
+    const [firstName, setFirstName] = useState("Yilong");
+    const [lastName, setLastName] = useState("Ma");
     return (
         <Layout>
-            <div className='hugecontainer w-full border-gray-700 pb-10'>
-                <div className='relative upper-container w-full h-[210px] pt-6 pl-6 flex'>
-                    <div className='right-box md:w-[130px] lg:w-[190px] absolute md:text-md'>
-                        <button
-                            className='absolute z-[2] md:w-[130px] lg:w-[160px] bg-debian-red hover:bg-red-700 text-white lg:text-sm font-bold py-2 px-4 rounded-full  '
-                            onClick={() => setEditPassword(true)}
-                        >
-                            Change Password
-                        </button>
-                    </div>
-                    <div className='left-box w-[600px] h-[220px] flex items-center justify-center gap-x-3 mx-auto'>
-                        <div className='left w-[250px] h-[220px] '>
-                            <div className='max-w-[100px] max-h-[100px] w-[calc(6rem+6vw)] h-[calc(6rem+6vw)] relative ml-auto'>
+            <div className='w-full border-gray-700 pb-10'>
+                <div className='relative w-full mt-6 flex'>
+                    <button
+                        className='absolute left-6 z-[2] md:w-[130px] lg:w-[160px] bg-debian-red hover:bg-red-700 text-white lg:text-sm font-bold py-2 px-4 rounded-full  '
+                        onClick={() => setEditPassword(true)}
+                    >
+                        Change Password
+                    </button>
+
+                    <div className='w-full flex items-center justify-center flex-col gap-y-3 mb-5'>
+                        <div className='flex justify-center items-center gap-x-5'>
+                            <div className='w-[5rem] md:w-[6rem] lg:w-[7rem] desktop:w-[8rem] aspect-square relative'>
                                 <Image
                                     src='/Olivier_1500_Trptch.jpg'
-                                    fill={true}
+                                    fill
                                     alt='profile picture'
-                                    objectFit='cover'
-                                    className='rounded-[50%]'
+                                    className='rounded-[50%] object-cover cursor-default'
                                 />
                             </div>
-                            <div className='w-[170px] py-3 ml-20'>
-                                <input
-                                    className='bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500 text-center '
-                                    id='inline-full-name'
-                                    type='text'
-                                    defaultValue='Yilong'
-                                />
+
+                            <div className='w-auto'>
+                                <button className='block bg-debian-red hover:bg-red-700 text-white font-bold py-2 px-4 text-xs rounded-full  cursor-pointer mb-3'>
+                                    Upload New Profile
+                                </button>
+
+                                <button className='block w-full bg-debian-red hover:bg-red-700 text-white font-bold text-xs py-2 px-4 rounded-full cursor-pointer'>
+                                    Delete Profile
+                                </button>
                             </div>
                         </div>
-                        <div className='right w-[250px] h-[220px]'>
-                            <div className='pt-4 pb-2'>
-                                <button className='w-[160px] bg-debian-red hover:bg-red-700 text-white font-bold py-2 px-4 text-xs rounded-full'>
-                                    <a href='/'>Upload New Profile</a>
-                                </button>
-                            </div>
-                            <div className=''>
-                                <button className='w-[160px] bg-debian-red hover:bg-red-700 text-white font-bold text-xs py-2 px-4 rounded-full'>
-                                    <a href='/'>Delete Profile</a>
-                                </button>
-                            </div>
-                            <div className='w-[170px] mt-[24px]'>
-                                <input
-                                    className='bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500 text-center '
-                                    id='inline-full-name'
-                                    type='text'
-                                    defaultValue='Ma'
-                                />
-                            </div>
+                        <div className='flex gap-x-5'>
+                            <input
+                                className='bg-gray-200 appearance-none border-2 border-gray-200 rounded py-2 px-1 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500 text-center'
+                                name='firstName'
+                                type='text'
+                                placeholder='First Name'
+                                value={firstName}
+                                onChange={(e) => setFirstName(e.target.value)}
+                                // @ts-ignore
+                                onClick={(e) => e.target.select()}
+                            />
+                            <input
+                                className='bg-gray-200 appearance-none border-2 border-gray-200 rounded py-2 px-1 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500 text-center '
+                                name='lastName'
+                                type='text'
+                                placeholder='Last Name'
+                                value={lastName}
+                                onChange={(e) => setLastName(e.target.value)}
+                                // @ts-ignore
+                                onClick={(e) => e.target.select()}
+                            />
                         </div>
                     </div>
                 </div>
-                <div
-                    className='block w-full h-[280px] rounded-lg bg-white bg-cover bg-center p-6 shadow-lg dark:bg-neutral-700'
-                    style={{ backgroundImage: 'url("/sonflower.jpg")' }}
-                >
-                    <div className='two-button w-[220px] h-[200px] pt-40'>
-                        <div className='first-button pb-2 '>
-                            <button
-                                type='button'
-                                className='w-[180px] inline-block rounded border-2 border-neutral-50 px-6 pb-[6px] pt-2 text-xs font-medium uppercase leading-normal text-neutral-50 transition duration-150 ease-in-out hover:border-neutral-100 hover:bg-neutral-500 hover:bg-opacity-10 hover:text-neutral-100 focus:border-neutral-100 focus:text-neutral-100 focus:outline-none focus:ring-0 active:border-neutral-200 active:text-neutral-200 dark:hover:bg-neutral-100 dark:hover:bg-opacity-10 '
-                            >
-                                <a href=''>Upload New Cover</a>
-                            </button>
-                        </div>
+                <div className='block w-full h-[12rem] md:h-[13rem] lg:h-[15rem] desktop:h-[17rem] bg-cover bg-center p-6 shadow-lg bg-neutral-700 relative'>
+                    <Image
+                        src='/sonflower.jpg'
+                        fill
+                        alt='cover picture'
+                        className='object-cover absolute top-0 left-0 cursor-pointer'
+                    />
+                    <div className='bottom-2 md:bottom-3 lg:bottom-4 desktop:bottom-5 absolute z-[1] flex flex-col'>
                         <button
                             type='button'
-                            className='w-[180px] inline-block rounded border-2 border-neutral-50 px-6 pb-[6px] pt-2 text-xs font-medium uppercase leading-normal text-neutral-50 transition duration-150 ease-in-out hover:border-neutral-100 hover:bg-neutral-500 hover:bg-opacity-10 hover:text-neutral-100 focus:border-neutral-100 focus:text-neutral-100 focus:outline-none focus:ring-0 active:border-neutral-200 active:text-neutral-200 dark:hover:bg-neutral-100 dark:hover:bg-opacity-10'
+                            className='mb-2 inline-block rounded border-2 border-neutral-50 px-2 md:px-3 lg:px-4 desktop:px-6 py-[0.2rem] md:py-[0.3rem] lg:py-[0.4rem] desktop:py-2 text-[0.5rem] md:text-[0.55rem] lg:text-[0.65rem] desktop:text-xs font-medium uppercase leading-normal text-neutral-50 transition duration-150 ease-in-out hover:border-neutral-100 hover:text-neutral-100 focus:border-neutral-100 focus:text-neutral-100 focus:outline-none focus:ring-0 active:border-neutral-200 active:text-neutral-200 bg-black bg-opacity-25 hover:bg-opacity-40'
                         >
-                            <a href=''>Delete Cover</a>
+                            Upload New Cover
+                        </button>
+                        <button
+                            type='button'
+                            className='inline-block rounded border-2 border-neutral-50 px-2 md:px-3 lg:px-4 desktop:px-6 py-[0.2rem] md:py-[0.3rem] lg:py-[0.4rem] desktop:py-2 text-[0.5rem] md:text-[0.55rem] lg:text-[0.65rem] desktop:text-xs font-medium uppercase leading-normal text-neutral-50 transition duration-150 ease-in-out hover:border-neutral-100 hover:text-neutral-100 focus:border-neutral-100 focus:text-neutral-100 focus:outline-none focus:ring-0 active:border-neutral-200 active:text-neutral-200 bg-black bg-opacity-25 hover:bg-opacity-40'
+                        >
+                            Delete Cover
                         </button>
                     </div>
                 </div>

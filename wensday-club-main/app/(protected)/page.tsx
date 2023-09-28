@@ -11,6 +11,8 @@ import {
     PostProp,
     CommentProp,
 } from "@/components/Post";
+import Popup from "@/components/Popup";
+import { log } from "console";
 
 let commentsData: Array<CommentProp> = [
     {
