@@ -11,15 +11,15 @@ export default function Page() {
     return (
         <Layout>
             <div className='w-full border-gray-700 pb-10'>
-                <div className='relative w-full mt-6 flex'>
+                <div className='relative w-full mt-3 sm:mt-6 flex'>
                     <button
-                        className='absolute left-6 z-[2] md:w-[130px] lg:w-[160px] bg-debian-red hover:bg-red-700 text-white lg:text-sm font-bold py-2 px-4 rounded-full  '
+                        className='absolute left-6 z-[2] block bg-debian-red hover:bg-red-700 text-white font-bold cursor-pointer mb-3 text-[0.7rem] md:text-xs lg:text-sm desktop:text-base py-[0.35rem] desktop:py-2 px-2 lg:px-3 desktop:px-4 rounded-2xl'
                         onClick={() => setEditPassword(true)}
                     >
                         Change Password
                     </button>
 
-                    <div className='w-full flex items-center justify-center flex-col gap-y-3 mb-5'>
+                    <div className='w-full flex items-center justify-center flex-col gap-y-3 mb-5 mt-10 sm:mt-0'>
                         <div className='flex justify-center items-center gap-x-5'>
                             <div className='w-[5rem] md:w-[6rem] lg:w-[7rem] desktop:w-[8rem] aspect-square relative'>
                                 <Image
@@ -31,18 +31,18 @@ export default function Page() {
                             </div>
 
                             <div className='w-auto'>
-                                <button className='block bg-debian-red hover:bg-red-700 text-white font-bold py-2 px-4 text-xs rounded-full  cursor-pointer mb-3'>
-                                    Upload New Profile
+                                <button className='block bg-debian-red hover:bg-red-700 text-white font-bold cursor-pointer mb-3 text-[0.7rem] md:text-xs lg:text-sm desktop:text-base py-[0.35rem] desktop:py-2 px-2 lg:px-3 desktop:px-4 rounded-2xl'>
+                                    Upload Profile Picture
                                 </button>
 
-                                <button className='block w-full bg-debian-red hover:bg-red-700 text-white font-bold text-xs py-2 px-4 rounded-full cursor-pointer'>
-                                    Delete Profile
+                                <button className='block w-full bg-debian-red hover:bg-red-700 text-white font-bold cursor-pointer mb-3 text-[0.7rem] md:text-xs lg:text-sm desktop:text-base py-[0.35rem] desktop:py-2 px-2 lg:px-3 desktop:px-4 rounded-2xl'>
+                                    Delete Profile Picture
                                 </button>
                             </div>
                         </div>
                         <div className='flex gap-x-5'>
                             <input
-                                className='bg-gray-200 appearance-none border-2 border-gray-200 rounded py-2 px-1 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500 text-center'
+                                className='bg-gray-200 focus:brightness-105 border-2 border-gray-200 focus:border-gray-300 rounded-lg py-[0.35rem] lg:py-2 px-1 text-gray-700 leading-tight tracking-wide outline-none text-center text-[0.7rem] md:text-xs lg:text-sm desktop:text-base'
                                 name='firstName'
                                 type='text'
                                 placeholder='First Name'
@@ -52,7 +52,7 @@ export default function Page() {
                                 onClick={(e) => e.target.select()}
                             />
                             <input
-                                className='bg-gray-200 appearance-none border-2 border-gray-200 rounded py-2 px-1 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500 text-center '
+                                className='bg-gray-200 focus:brightness-105 border-2 border-gray-200 focus:border-gray-300 rounded-lg py-[0.35rem] lg:py-2 px-1 text-gray-700 leading-tight tracking-wide outline-none text-center text-[0.7rem] md:text-xs lg:text-sm desktop:text-base'
                                 name='lastName'
                                 type='text'
                                 placeholder='Last Name'
