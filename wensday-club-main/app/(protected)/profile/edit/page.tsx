@@ -139,13 +139,13 @@ export default function Page() {
                         </button>
                     </div>
                 </div>
-                <div className='mx-20 mt-5 grid grid-cols-4 gap-x-5 gap-y-4'>
-                    <p className='text-lg font-bold mt-2 col-span-1 text-end'>
+                <div className='mx-0 sm:mx-5 lg:mx-16 desktop:mx-28 mt-5 mb-5 grid grid-cols-12 gap-x-5 gap-y-4'>
+                    <p className='text-sm md:text-base lg:text-lg desktop:text-xl font-bold mt-2 col-span-2 text-end'>
                         About Me
                     </p>
-                    <div className='col-span-3 flex flex-col '>
+                    <div className='col-span-10 flex flex-col '>
                         <textarea
-                            className='hide-scrollbar min-h-[7rem] resize-none outline-gray-400 border-[1px] border-gray-500 rounded-lg p-2 tracking-[-0.015rem]'
+                            className='hide-scrollbar min-h-[7rem] resize-none outline-gray-400 border-[1px] border-gray-500 rounded-lg p-2 tracking-[-0.015rem] text-[0.7rem] md:text-xs lg:text-sm desktop:text-base'
                             onChange={(e) => {
                                 if (e.target.value.length <= 255)
                                     setAboutMe(e.target.value);
@@ -164,15 +164,15 @@ export default function Page() {
                         </span>
                     </div>
 
-                    <p className='text-lg font-bold mt-2 col-span-1 text-end'>
+                    <p className='text-sm md:text-base lg:text-lg desktop:text-xl font-bold mt-2 col-span-2 text-end'>
                         Hobbies
                     </p>
-                    <div className='col-span-3'>
-                        <div className='flex'>
-                            <div className='flex flex-col w-5/6'>
+                    <div className='col-span-10'>
+                        <div className='flex gap-x-5'>
+                            <div className='flex flex-col flex-1'>
                                 <input
                                     type='text'
-                                    className='block w-full outline-gray-400 px-2 py-2 border-[1px] border-gray-500'
+                                    className='block w-full outline-gray-400 px-2 py-2 border-[1px] border-gray-500 text-[0.7rem] md:text-xs lg:text-sm desktop:text-base'
                                     value={hobby}
                                     ref={hobbyInput}
                                     onKeyDown={(e) => {
@@ -195,7 +195,7 @@ export default function Page() {
                                 </span>
                             </div>
                             <button
-                                className='block self-start ml-auto py-2 px-5 border-[1px] border-black hover:bg-blue-200 active:bg-blue-300 rounded-lg'
+                                className='block self-start py-2 px-5 border-[1px] border-black rounded-lg text-[0.7rem] md:text-xs lg:text-sm desktop:text-base bg-debian-red hover:bg-red-700 text-white font-bold'
                                 onClick={addNewHobby}
                             >
                                 Add
@@ -206,14 +206,14 @@ export default function Page() {
                                 className='inline-block mr-2 border-[1px] border-gray-500 rounded-lg py-1 px-2 cursor-default hover:border-gray-600'
                                 key={hobbyObject.id}
                             >
-                                <div
-                                    className='flex items-center gap-x-1'
-                                    onClick={() => {
-                                        removeHobby(hobbyObject.id);
-                                    }}
-                                >
-                                    <div className='flex items-center border-[1px] border-red-500 bg-red-500 p-1 rounded-full'>
-                                        <button className='relative w-3 aspect-square'>
+                                <div className='flex items-center gap-x-1'>
+                                    <div className='flex items-center border-[1px] border-red-500 bg-red-500 p-1 rounded-full text-[0.7rem] md:text-xs lg:text-sm desktop:text-base'>
+                                        <button
+                                            className='relative w-3 aspect-square'
+                                            onClick={() => {
+                                                removeHobby(hobbyObject.id);
+                                            }}
+                                        >
                                             <Image
                                                 src='/remove.png'
                                                 fill
