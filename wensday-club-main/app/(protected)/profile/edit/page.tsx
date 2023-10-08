@@ -2,12 +2,65 @@
 import ChangePassword from "@/components/ChangePassword";
 import Layout from "@/components/Layout";
 import Image from "next/image";
-import { useState } from "react";
+import { MutableRefObject, useRef, useState } from "react";
+import "@/app/globals.css";
+import { titleCase } from "@/app/helper";
+
+interface HobbyType {
+    id: string;
+    hobby: string;
+}
+
+let initialHobbies: Array<HobbyType> = [
+    {
+        id: "id123",
+        hobby: "Travelling",
+    },
+    {
+        id: "id234",
+        hobby: "Music",
+    },
+    {
+        id: "id345",
+        hobby: "Gaming",
+    },
+];
 
 export default function Page() {
+    const hobbyInput = useRef<HTMLInputElement>(null);
     const [editPassword, setEditPassword] = useState(false);
     const [firstName, setFirstName] = useState("Yilong");
     const [lastName, setLastName] = useState("Ma");
+    const [aboutMe, setAboutMe] = useState(
+        `"Preoccupied with a single leaf... you won't see the tree. Preoccupied with a single tree... you'll miss the entire forest."`
+    );
+    const [hobby, setHobby] = useState("");
+    const [allHobbies, setAllHobbies] = useState(initialHobbies);
+
+    function addNewHobby() {
+        if (hobby.length === 0) return;
+        if (allHobbies.length === 10) {
+            alert("You can only have a maximum of 10 hobbies");
+            return;
+        }
+        let newHobby: HobbyType = {
+            id: "id" + new Date().getTime(),
+            hobby: titleCase(hobby),
+        };
+
+        allHobbies.push(newHobby);
+        setHobby("");
+
+        hobbyInput.current?.focus();
+    }
+
+    function removeHobby(id: string) {
+        setAllHobbies(
+            allHobbies.filter((hobbyObject) => {
+                return hobbyObject.id != id;
+            })
+        );
+    }
     return (
         <Layout>
             <div className='w-full border-gray-700 pb-10'>
@@ -86,67 +139,101 @@ export default function Page() {
                         </button>
                     </div>
                 </div>
-                <div className='buttom w-full mt-6 ml-6 flex gap gap-x-10'>
-                    <div className='flex flex-col md:w-[200px] lg:w-[400px] h-[250px] pt-2 pb-4 px-2 border-2 border-gray-700 rounded-xl '>
-                        <p className='md:w-[100px] lg:w-[160px] bg-red-500 text-white font-bold py-2 px-1 rounded-full text-sm text-center mx-auto'>
-                            About Me
-                        </p>
+                <div className='mx-0 sm:mx-5 lg:mx-16 desktop:mx-28 mt-5 mb-5 grid grid-cols-12 gap-x-5 gap-y-4'>
+                    <p className='text-sm md:text-base lg:text-lg desktop:text-xl font-bold mt-2 col-span-2 text-end'>
+                        About Me
+                    </p>
+                    <div className='col-span-10 flex flex-col '>
                         <textarea
-                            cols={36}
-                            name='commentfield'
-                            defaultValue={
-                                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "
+                            className='hide-scrollbar min-h-[7rem] resize-none outline-gray-400 border-[1px] border-gray-500 rounded-lg p-2 tracking-[-0.015rem] text-[0.7rem] md:text-xs lg:text-sm desktop:text-base'
+                            onChange={(e) => {
+                                if (e.target.value.length <= 255)
+                                    setAboutMe(e.target.value);
+                            }}
+                            maxLength={255}
+                        >
+                            {aboutMe}
+                        </textarea>
+                        <span
+                            className={
+                                "block ml-auto text-sm" +
+                                (aboutMe.length === 255 ? " text-red-500" : "")
                             }
-                            className='flex-1 mt-3 mx-7 focus:outline-none text-justify  md:w-[100px] lg:w-[320px] resize-none'
-                        />
+                        >
+                            {aboutMe.length}/255
+                        </span>
+                    </div>
 
-                        {/* <div className='About_Me_text font-mono font-size-sm '>
+                    <p className='text-sm md:text-base lg:text-lg desktop:text-xl font-bold mt-2 col-span-2 text-end'>
+                        Hobbies
+                    </p>
+                    <div className='col-span-10'>
+                        <div className='flex gap-x-5'>
+                            <div className='flex flex-col flex-1'>
                                 <input
-                                    className=" h-[100px] appearance-none rounded w-full py-2 px-4 text-gray-700  focus:outline-none focus:bg-white focus:border-purple-500 "
-                                    id="inline-full-name"
-                                    type="text"
-                                    defaultValue="Yilong"
+                                    type='text'
+                                    className='block w-full outline-gray-400 px-2 py-2 border-[1px] border-gray-500 text-[0.7rem] md:text-xs lg:text-sm desktop:text-base'
+                                    value={hobby}
+                                    ref={hobbyInput}
+                                    onKeyDown={(e) => {
+                                        if (e.key === "Enter") addNewHobby();
+                                    }}
+                                    onChange={(e) => {
+                                        if (e.target.value.length <= 20)
+                                            setHobby(e.target.value);
+                                    }}
                                 />
-                         </div> */}
-                    </div>
-
-                    <div className='w-[400px] h-[250px] pt-2 px-9 border-2 border-gray-700 rounded-xl'>
-                        <p className='w-[160px] bg-red-500  text-white font-bold py-2 px-3 rounded-full text-sm text-center mx-auto'>
-                            Add Hobbies
-                        </p>
-                        <div className='About_Me_text font-mono font-size-sm mt-2'>
-                            <ul className='list-disc'>
-                                <li>
-                                    <div className='input-hobbie-text font-mono font-size-sm '>
-                                        <input
-                                            className=' h-[45px] appearance-none rounded w-full py-2 px-4 text-gray-700  focus:outline-none focus:bg-white focus:border-purple-500 '
-                                            id='inline-full-name'
-                                            type='text'
-                                            defaultValue='Cooking blue'
-                                        />
-                                    </div>
-                                </li>
-                                <li>
-                                    <div className='input-hobbie-text font-mono font-size-sm '>
-                                        <input
-                                            className=' h-[45px] appearance-none rounded w-full py-2 px-4 text-gray-700  focus:outline-none focus:bg-white focus:border-purple-500 '
-                                            id='inline-full-name'
-                                            type='text'
-                                            defaultValue='Build Nuclear thing'
-                                        />
-                                    </div>
-                                </li>
-                            </ul>
+                                <span
+                                    className={
+                                        "block ml-auto text-sm" +
+                                        (hobby.length === 20
+                                            ? " text-red-500"
+                                            : "")
+                                    }
+                                >
+                                    {hobby.length}/20
+                                </span>
+                            </div>
+                            <button
+                                className='block self-start py-2 px-5 border-[1px] border-black rounded-lg text-[0.7rem] md:text-xs lg:text-sm desktop:text-base bg-debian-red hover:bg-red-700 text-white font-bold'
+                                onClick={addNewHobby}
+                            >
+                                Add
+                            </button>
                         </div>
+                        {allHobbies.map((hobbyObject) => (
+                            <div
+                                className='inline-block mr-2 border-[1px] border-gray-500 rounded-lg py-1 px-2 cursor-default hover:border-gray-600'
+                                key={hobbyObject.id}
+                            >
+                                <div className='flex items-center gap-x-1'>
+                                    <div className='flex items-center border-[1px] border-red-500 bg-red-500 p-1 rounded-full text-[0.7rem] md:text-xs lg:text-sm desktop:text-base'>
+                                        <button
+                                            className='relative w-3 aspect-square'
+                                            onClick={() => {
+                                                removeHobby(hobbyObject.id);
+                                            }}
+                                        >
+                                            <Image
+                                                src='/remove.png'
+                                                fill
+                                                alt='remove icon'
+                                            />
+                                        </button>
+                                    </div>
+                                    <p>{hobbyObject.hobby}</p>
+                                </div>
+                            </div>
+                        ))}
                     </div>
-
-                    <button
-                        className='block self-end w-[100px] h-[40px] shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded ml-auto'
-                        type='button'
-                    >
-                        Save
-                    </button>
                 </div>
+
+                <button
+                    className='block self-end w-[100px] h-[40px] shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded ml-auto'
+                    type='button'
+                >
+                    Save
+                </button>
             </div>
             {editPassword ? (
                 <ChangePassword onExitPopup={() => setEditPassword(false)} />

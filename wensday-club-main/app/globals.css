@@ -6,6 +6,15 @@
     --sidebar-width: min(310px, 15vw);
 }
 
+.hide-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+.hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
 .flex-center {
     @apply flex items-center justify-center;
 }
