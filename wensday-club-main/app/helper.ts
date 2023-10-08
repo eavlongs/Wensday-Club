@@ -16,3 +16,22 @@ export function titleCase(str: string) {
         .map((word) => word[0].toUpperCase() + word.slice(1).toLowerCase())
         .join(" ");
 }
+
+export function getFormattedDate(date: Date): string {
+    const currentTime = new Date();
+    const numberOfDays = Math.floor(
+        (currentTime.getTime() - date.getTime()) / (1000 * 60 * 60 * 24)
+    );
+    if (numberOfDays < 7) return numberOfDays + " days ago";
+    else if (numberOfDays < 30)
+        return Math.floor(numberOfDays / 7) + " weeks ago";
+    else {
+        let day = date.getDate();
+        let month = date.getMonth() + 1;
+        let year = date.getFullYear();
+
+        return `${day.toString().padStart(2, "0")}/${month
+            .toString()
+            .padStart(2, "0")}/${year}`;
+    }
+}
