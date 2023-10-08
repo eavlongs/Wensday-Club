@@ -24,7 +24,7 @@ export default function SidebarButton({
         "text-debian-red hover:text-white hover:bg-debian-red";
 
     return (
-        <Link href={text === "home" ? "/" : text} tabIndex={-1}>
+        <Link href={text === "home" ? "/" : "/" + text} tabIndex={-1}>
             <button
                 className={
                     sidebarClassName +
