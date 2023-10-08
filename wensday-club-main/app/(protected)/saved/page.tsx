@@ -4,9 +4,48 @@ import Layout from "@/components/Layout";
 import { IonButton, IonIcon } from "@ionic/react";
 import { useState } from "react";
 
+interface Saved {
+    userName: string;
+    userProfile: string;
+    savedPost: string;
+    chat: string;
+    recentSaved: number;
+}
+
+const saves: Saved[] = [
+    {
+        userName: "Bunlong Prank",
+        userProfile: "Olivier_1500_Trptch.jpg",
+        savedPost: "Ling.jpg",
+        chat: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque harum nobis sunt nisi possimus provident magnam sapiente accusamus voluptatibus quisquam! Facilis id dolorem architecto sapiente quisquam, eaque repudiandae culpa tenetur?",
+        recentSaved: 1,
+    },
+    {
+        userName: "Bovisal Zhou",
+        userProfile: "Olivier_1500_Trptch.jpg",
+        savedPost: "Ling.jpg",
+        chat: "ah bek",
+        recentSaved: 2,
+    },
+    {
+        userName: "Eavlong Mask",
+        userProfile: "Olivier_1500_Trptch.jpg",
+        savedPost: "Ling.jpg",
+        chat: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque harum nobis sunt nisi possimus provident magnam sapiente accusamus voluptatibus quisquam! Facilis id dolorem architecto sapiente quisquam, eaque repudiandae culpa tenetur?",
+        recentSaved: 3,
+    },
+];
+
+const removeSaved = () => {
+    let newArrayChat = [...saves];
+    newArrayChat.splice(1, 1);
+};
+
 export default function Saved() {
     const [toggleRemove, setToggleRemove] = useState(false);
+
     return (
+<<<<<<< Updated upstream
         <Layout>
             <div className='w-[100%] py-14 px-[150px]'>
                 <p className='text-2xl'>Saved Posts</p>
@@ -36,8 +75,46 @@ export default function Saved() {
                                                 3 days ago
                                             </p>
                                         </div>
+=======
+        <>
+            <div className="w-[100%] py-14 px-[150px]">
+                <p className="text-2xl">Saved Posts</p>
+                <div className="mt-5">
+                    <div>
+                        {saves.map((save, index) => (
+                            <div
+                                className="border border-black rounded-[15px] min-w-[600px] mb-3"
+                                key={index}
+                            >
+                                <div className="grid grid-cols-[30%_70%]">
+                                    <div className="columns-[30%]">
+                                        <img
+                                            src={save.savedPost}
+                                            alt=""
+                                            className="w-[100%] h-[100%] rounded-l-[15px] object-cover"
+                                        />
+>>>>>>> Stashed changes
                                     </div>
+                                    <div className="block">
+                                        <div className="flex justify-between">
+                                            <div className="p-2 flex">
+                                                <img
+                                                    src="Olivier_1500_Trptch.jpg"
+                                                    alt=""
+                                                    className="w-[50px] h-[50px] rounded-[50%] object-cover"
+                                                />
+                                                <div className="text-debian-red ml-3">
+                                                    <p className="text-xl">
+                                                        {save.userName}
+                                                    </p>
+                                                    <p className="text-sm">
+                                                        {save.recentSaved} days
+                                                        ago
+                                                    </p>
+                                                </div>
+                                            </div>
 
+<<<<<<< Updated upstream
                                     <img
                                         src='remove.png'
                                         alt=''
@@ -258,6 +335,28 @@ export default function Saved() {
                                 </div>
                             </div>
                         </div>
+=======
+                                            <img
+                                                src="remove.png"
+                                                alt=""
+                                                className="w-[1.7rem] h-[1.7rem] mt-2 mr-3 opacity-100 hover:opacity-90 object-cover cursor-pointer border-[2px] border-black hover:border-red-600 rounded-[50%] p-1 "
+                                                onClick={() => {
+                                                    setToggleRemove(
+                                                        !toggleRemove
+                                                    );
+                                                }}
+                                            />
+                                        </div>
+                                        <div className="ml-3 h-20 overflow-hidden">
+                                            <p className="max-h-12 h-full">
+                                                {save.chat}
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
+>>>>>>> Stashed changes
                     </div>
 
                     {toggleRemove ? (
@@ -276,7 +375,15 @@ export default function Saved() {
                                     >
                                         Cancel
                                     </button>
+<<<<<<< Updated upstream
                                     <button className='border-1 broder-black bg-debian-red p-2 rounded-[10px] text-white font-bold'>
+=======
+                                    <button
+                                        className="border-1 broder-black bg-debian-red p-2 rounded-[10px] text-white font-bold"
+                                        // data-id={index}
+                                        onClick={() => removeSaved()}
+                                    >
+>>>>>>> Stashed changes
                                         Delete
                                     </button>
                                 </div>
