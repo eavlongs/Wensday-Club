@@ -11,6 +11,7 @@ import {
     PostProp,
     CommentProp,
 } from "@/components/Post";
+import DropDown from "@/components/DropDown";
 import Popup from "@/components/Popup";
 import { log } from "console";
 
@@ -104,7 +105,7 @@ let posts: Array<PostProp> = [
         harum architecto ullam, facere praesentium iusto necessitatibus
         nemo! Illo laboriosam laudantium in vitae.`,
         image: "/Ling.jpg",
-        likeCount: 15,
+        likeCount: 16,
         commentCount: 10,
         shareCount: 2,
         postedAt: new Date("2021-08-31"),
@@ -118,7 +119,9 @@ export default function Home() {
     const [sharePopup, setSharePopup] = useState(false);
     const [reportPopup, setReportPopup] = useState(false);
     return (
+        
         <Layout>
+            
             <script
                 type='module'
                 src='https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js'
@@ -127,14 +130,14 @@ export default function Home() {
                 noModule
                 src='https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js'
             ></script>
-            <div className='w-[70%] lg:w-[60%] min-w-[450px] mx-auto'>
+            <div className='w-[70%] lg:w-[60%] min-w-[400px] mx-auto'>
                 <div className='w-full flex justify-between px-8 items-center text-xs md:text-sm lg:text-lg desktop:text-xl mt-5 mb-4'>
                     <p>something to say?</p>
                     <button className='text-xs md:text-sm lg:text-lg desktop:text-xl px-10 py-1 desktop:py-2 bg-debian-red border-[1px]  rounded-[20px] text-white font-bold'>
                         Post Here
                     </button>
                 </div>
-
+              
                 <Post
                     post={posts[0]}
                     onComment={(postID) => {
@@ -175,6 +178,7 @@ export default function Home() {
                     />
                 ) : null}
             </div>
+            
         </Layout>
     );
 }
