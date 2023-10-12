@@ -150,7 +150,7 @@ function InsideChat({ onExit }: { onExit: () => void }) {
 
                             <div className='ml-3'>
                                 <a className='' href='/profile'>
-                                    <p className='font-semibold text-xs sm:text-sm md:text-md lg:text-base desktop:text-xl'>
+                                    <p className='font-semibold text-xs sm:text-sm md:text-base desktop:text-xl'>
                                         Bunlong Prak
                                     </p>
                                 </a>
@@ -215,7 +215,7 @@ function InsideChat({ onExit }: { onExit: () => void }) {
                                 placeholder='Write A Message'
                                 ref={messageInput}
                                 onKeyUp={(event) => {
-                                    if (event.keyCode === 13) sendMessage();
+                                    if (event.key === "Enter") sendMessage();
                                 }}
                             />
                         </div>
@@ -254,11 +254,11 @@ function User({ onClick, id }: { onClick: (id: string) => void; id: string }) {
                 />
             </div>
             <div className='truncate'>
-                <p className='text-debian-red text-xs sm:text-sm md:text-md lg:text-base desktop:text-xl mb-[0.2rem] lg:mb-[0.15rem] desktop:mb-[0.2rem]'>
+                <p className='text-debian-red text-xs sm:text-sm md:text-base desktop:text-xl mb-[0.2rem] lg:mb-[0.15rem] desktop:mb-[0.2rem]'>
                     Bunlong Prank
                 </p>
                 {/* for some reason, the display must be inline in order for "truncate to work" */}
-                <p className='inline text-[0.5rem] sm:text-xs md:text-sm lg:text-md desktop:text-lg'>
+                <p className='inline text-[0.5rem] sm:text-xs md:text-sm lg:text-base desktop:text-lg'>
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit.
                     Cum fuga similique modi ad assumenda veritatis doloribus id
                     harum. Ipsam, consequatur itaque.
