@@ -87,19 +87,19 @@ export default function Page() {
 
 function Chat({ onClick }: { onClick: (id: string) => void }) {
     return (
-        <div className='w-4/5 max-w-[900px] min-w-[650px] mx-auto mt-5'>
-            <p className='text-2xl font-bold mb-2'>Chat</p>
-            <div className='w-full'>
-                <User onClick={(id) => onClick(id)} id='some ID' />
-                <User onClick={(id) => onClick(id)} id='some ID' />
-                <User onClick={(id) => onClick(id)} id='some ID' />
-                <User onClick={(id) => onClick(id)} id='some ID' />
-                <User onClick={(id) => onClick(id)} id='some ID' />
-                <User onClick={(id) => onClick(id)} id='some ID' />
-                <User onClick={(id) => onClick(id)} id='some ID' />
-                <User onClick={(id) => onClick(id)} id='some ID' />
-                <User onClick={(id) => onClick(id)} id='some ID' />
-                <User onClick={(id) => onClick(id)} id='some ID' />
+        <div className="w-[935px] max-[1000px] min-w-[650px] mx-[110px] mt-5">
+            <p className="text-2xl mb-2">Chat</p>
+            <div className="w-full">
+                <User onClick={(id) => onClick(id)} id="some ID" />
+                <User onClick={(id) => onClick(id)} id="some ID" />
+                <User onClick={(id) => onClick(id)} id="some ID" />
+                <User onClick={(id) => onClick(id)} id="some ID" />
+                <User onClick={(id) => onClick(id)} id="some ID" />
+                <User onClick={(id) => onClick(id)} id="some ID" />
+                <User onClick={(id) => onClick(id)} id="some ID" />
+                <User onClick={(id) => onClick(id)} id="some ID" />
+                <User onClick={(id) => onClick(id)} id="some ID" />
+                <User onClick={(id) => onClick(id)} id="some ID" />
             </div>
         </div>
     );
@@ -133,28 +133,37 @@ function InsideChat({ onExit }: { onExit: () => void }) {
         <>
             {/* <div className="chat w-[700px] h-[500px]  py-20 px-20 items-center justify-center ml-[300px] mt-[200px] "> */}
 
-            <div className='flex flex-col items-center'>
+            <div className="flex flex-col items-center">
                 {/* chat box */}
-                <div className='lg:w-[500px] desktop:w-[600px] lg:h-[90vh] flex flex-col border shadow-md bg-white'>
-                    <div className='flex items-center justify-between border-b pl-7 pr-2 py-1'>
+                <div className="lg:w-[500px] desktop:w-[600px] lg:h-[90vh] flex flex-col border shadow-md bg-white">
+                    <div className="flex items-center justify-between border-b pl-7 pr-2 py-1">
                         {/* user info */}
-                        <div className='flex items-center'>
-                            <div className='relative w-[50px] aspect-square'>
+                        <div className="flex items-center">
+                            <div className="relative w-[50px] aspect-square">
                                 <Image
-                                    src='/Olivier_1500_Trptch.jpg'
-                                    alt='profile picture'
+                                    src="/Olivier_1500_Trptch.jpg"
+                                    alt="profile picture"
                                     fill
-                                    className='rounded-full object-cover'
+                                    className="rounded-full object-cover"
                                 />
                             </div>
 
+<<<<<<< HEAD
+                            <div className="ml-3">
+                                <a className="" href="/profile">
+                                    <p className="font-semibold text-xs sm:text-sm md:text-md lg:text-base desktop:text-xl">
+=======
                             <div className='ml-3'>
                                 <a className='' href='/profile'>
-                                    <p className='font-semibold text-xs sm:text-sm md:text-md lg:text-base desktop:text-xl'>
+                                    <p className='font-semibold text-xs sm:text-sm md:text-base desktop:text-xl'>
+<<<<<<< HEAD
+>>>>>>> bc5335d3f9d922e4d1ef1b60c26cf2f454495db1
+=======
+>>>>>>> bc5335d3f9d922e4d1ef1b60c26cf2f454495db1
                                         Bunlong Prak
                                     </p>
                                 </a>
-                                <p className='text-xs text-gray-600 cursor-default'>
+                                <p className="text-xs text-gray-600 cursor-default">
                                     Online
                                 </p>
                             </div>
@@ -163,33 +172,33 @@ function InsideChat({ onExit }: { onExit: () => void }) {
                         {/* chat box action */}
                         <div>
                             <a
-                                className='inline-flex hover:bg-indigo-50 rounded-full p-2'
-                                href='#'
+                                className="inline-flex hover:bg-indigo-50 rounded-full p-2"
+                                href="#"
                             ></a>
                             <button
-                                className='inline-flex hover:bg-indigo-50 rounded-full p-2'
-                                type='button'
+                                className="inline-flex hover:bg-indigo-50 rounded-full p-2"
+                                type="button"
                                 onClick={onExit}
                             >
                                 <svg
-                                    xmlns='http://www.w3.org/2000/svg'
-                                    className='h-6 w-6'
-                                    fill='none'
-                                    viewBox='0 0 24 24'
-                                    stroke='currentColor'
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    className="h-6 w-6"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke="currentColor"
                                 >
                                     <path
-                                        strokeLinecap='round'
-                                        strokeLinejoin='round'
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
                                         strokeWidth={2}
-                                        d='M6 18L18 6M6 6l12 12'
+                                        d="M6 18L18 6M6 6l12 12"
                                     />
                                 </svg>
                             </button>
                         </div>
                         {/* end chat box action */}
                     </div>
-                    <div className='flex-1 px-4 py-2 overflow-y-auto flex flex-col-reverse'>
+                    <div className="flex-1 px-4 py-2 overflow-y-auto flex flex-col-reverse">
                         {/* chat message */}
                         {messages.map((message, index) => {
                             return (
@@ -205,28 +214,28 @@ function InsideChat({ onExit }: { onExit: () => void }) {
                             );
                         })}
                     </div>
-                    <div className='flex items-center border-t p-2'>
+                    <div className="flex items-center border-t p-2">
                         {/* chat input action */}
                         {/* end chat input action */}
-                        <div className='w-full mx-1 '>
+                        <div className="w-full mx-1 ">
                             <input
-                                className='w-full border-none focus:outline-none text-sm'
-                                type='text'
-                                placeholder='Write A Message'
+                                className="w-full border-none focus:outline-none text-sm"
+                                type="text"
+                                placeholder="Write A Message"
                                 ref={messageInput}
                                 onKeyUp={(event) => {
-                                    if (event.keyCode === 13) sendMessage();
+                                    if (event.key === "Enter") sendMessage();
                                 }}
                             />
                         </div>
                         {/* chat send action */}
 
                         <button
-                            className='hover:bg-indigo-50 rounded-full p-1 relative w-[25px] aspect-square mr-2'
-                            type='button'
+                            className="hover:bg-indigo-50 rounded-full p-1 relative w-[25px] aspect-square mr-2"
+                            type="button"
                             onClick={sendMessage}
                         >
-                            <Image src='/send.png' alt='send icon' fill />
+                            <Image src="/send.png" alt="send icon" fill />
                         </button>
 
                         {/* end chat send action */}
@@ -243,29 +252,47 @@ function InsideChat({ onExit }: { onExit: () => void }) {
 function User({ onClick, id }: { onClick: (id: string) => void; id: string }) {
     return (
         <div
-            className='w-full border-2 border-gray-500 mt-[0.1rem] grid grid-cols-[15%_auto_15%] items-center cursor-pointer rounded-lg py-2 hover:bg-gray-100'
+            className="w-[935px] border-2 border-gray-500 mt-2 grid grid-cols-[15%_auto_15%] items-center cursor-pointer rounded-lg py-2 hover:bg-gray-100"
             onClick={() => onClick(id)}
         >
-            <div className='mx-auto'>
+            <div className="mx-auto">
                 <img
-                    src='Olivier_1500_Trptch.jpg'
-                    alt='profile picture'
-                    className='rounded-[50%] h-[4rem] lg:h-[4.5rem] desktop:h-[4rem] aspect-square object-cover'
+                    src="Olivier_1500_Trptch.jpg"
+                    alt="profile picture"
+                    className="rounded-[50%] w-[5rem] h-[4rem] lg:h-[5rem] desktop:h-[5rem] aspect-square object-cover"
                 />
             </div>
-            <div className='truncate'>
-                <p className='text-debian-red text-xs sm:text-sm md:text-md lg:text-base desktop:text-xl mb-[0.2rem] lg:mb-[0.15rem] desktop:mb-[0.2rem]'>
+<<<<<<< HEAD
+<<<<<<< HEAD
+            <div className="truncate pr-10">
+                <p className="text-sm lg:text-sm desktop:text-base font-semibold text-debian-red cursor-pointer hover:underline !leading-8 lg:!leading-10 mb-1">
                     Bunlong Prank
                 </p>
                 {/* for some reason, the display must be inline in order for "truncate to work" */}
-                <p className='inline text-[0.5rem] sm:text-xs md:text-sm lg:text-md desktop:text-lg'>
+                <p className="inline text-[0.5rem] sm:text-xs md:text-sm lg:text-md desktop:text-lg">
+=======
+            <div className='truncate'>
+                <p className='text-debian-red text-xs sm:text-sm md:text-base desktop:text-xl mb-[0.2rem] lg:mb-[0.15rem] desktop:mb-[0.2rem]'>
+                    Bunlong Prank
+                </p>
+                {/* for some reason, the display must be inline in order for "truncate to work" */}
+                <p className='inline text-[0.5rem] sm:text-xs md:text-sm lg:text-base desktop:text-lg'>
+>>>>>>> bc5335d3f9d922e4d1ef1b60c26cf2f454495db1
+=======
+            <div className='truncate'>
+                <p className='text-debian-red text-xs sm:text-sm md:text-base desktop:text-xl mb-[0.2rem] lg:mb-[0.15rem] desktop:mb-[0.2rem]'>
+                    Bunlong Prank
+                </p>
+                {/* for some reason, the display must be inline in order for "truncate to work" */}
+                <p className='inline text-[0.5rem] sm:text-xs md:text-sm lg:text-base desktop:text-lg'>
+>>>>>>> bc5335d3f9d922e4d1ef1b60c26cf2f454495db1
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit.
                     Cum fuga similique modi ad assumenda veritatis doloribus id
                     harum. Ipsam, consequatur itaque.
                 </p>
             </div>
-            <div className='self-start mx-auto'>
-                <p className='text-xs'>Tuesday</p>
+            <div className="self-start mx-auto">
+                <p className="text-xs">Tuesday</p>
             </div>
         </div>
     );
@@ -284,13 +311,13 @@ function Message({
                 (last ? "mb-2" : null) + " flex items-end my-[0.12rem] w-full"
             }
         >
-            <div className='relative h-[2.5rem] aspect-square mr-4'>
+            <div className="relative h-[2.5rem] aspect-square mr-4">
                 {last ? (
                     <Image
-                        src='/Olivier_1500_Trptch.jpg'
-                        alt='profile picture'
+                        src="/Olivier_1500_Trptch.jpg"
+                        alt="profile picture"
                         fill
-                        className='rounded-full object-cover'
+                        className="rounded-full object-cover"
                     />
                 ) : null}
             </div>
@@ -303,7 +330,7 @@ function Message({
                 <p>{message.text}</p>
                 {/* arrow */}
                 {last && (
-                    <div className='absolute left-0 bottom-3 transform -translate-x-1/2 rotate-45 w-2 h-2 bg-red-600' />
+                    <div className="absolute left-0 bottom-3 transform -translate-x-1/2 rotate-45 w-2 h-2 bg-red-600" />
                 )}
                 {/* end arrow */}
             </div>
@@ -318,7 +345,7 @@ function Message({
             <div>{message.text}</div>
             {/* arrow */}
             {last && (
-                <div className='absolute right-0 bottom-3 transform translate-x-1/2 rotate-45 w-2 h-2 bg-indigo-100' />
+                <div className="absolute right-0 bottom-3 transform translate-x-1/2 rotate-45 w-2 h-2 bg-indigo-100" />
             )}
             {/* end arrow */}
         </div>

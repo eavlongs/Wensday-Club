@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { IonIcon } from "@ionic/react";
 import Popup from "./Popup";
+import DropDown from "./DropDown";
 
 export interface PostProp {
     id: string;
@@ -45,6 +46,7 @@ export function Post({
                 "border-[1px] border-black shadow-sm rounded-2xl " + className
             }
         >
+            
             <div className='flex mx-4 mt-3 items-center gap-x-3'>
                 <Link href='/profile/' prefetch={false}>
                     <div className='relative min-w-[2rem] w-10 lg:w-14 desktop:w-16 aspect-square'>
@@ -62,10 +64,12 @@ export function Post({
                             {post.firstName} {post.lastName}
                         </p>
                     </Link>
+                    
                     <p className='text-[0.5rem] md:text-xs lg:text-sm desktop:text-base'>
                         3 days ago
                     </p>
                 </div>
+                <DropDown></DropDown>
             </div>
             <p className='my-2 mx-3 text-xs md:text-sm lg:text-base desktop:text-lg'>
                 {post.text}

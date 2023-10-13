@@ -84,11 +84,11 @@ export default function Page() {
 
     return (
         <Layout>
-            <div className='w-4/5 mx-auto mt-5 min-w-[390px]'>
+            <div className="w-[935px] mx-[110px] mt-5 min-w-[390px]">
                 <h1
                     className={
                         ubuntu.className +
-                        " font-medium text-sm md:text-base lg:text-xl desktop:text-2xl mb-3"
+                        "text-sm md:text-base lg:text-xl desktop:text-2xl mb-3"
                     }
                 >
                     Following
@@ -116,21 +116,21 @@ function User({
     onToggleFollow: (id: string) => void;
 }) {
     return (
-        <div className='flex w-full py-2 px-5 my-2 border-black border-[1px] rounded-[10px] shadow-md hover:shadow-lg cursor-pointer'>
+        <div className="flex w-[935px] py-2 px-5 my-2 border-black border-[1px] rounded-[10px] shadow-md hover:shadow-lg cursor-pointer">
             <Link href={"/profile/" + user.id} prefetch={false}>
-                <div className='relative min-w-[3rem] w-12 lg:w-16 desktop:w-20 aspect-square'>
+                <div className="relative min-w-[3rem] w-12 lg:w-16 desktop:w-20 aspect-square">
                     <Image
                         src={user.profilePicture}
-                        objectFit='cover'
-                        alt='oppenheimer profile'
+                        objectFit="cover"
+                        alt="oppenheimer profile"
                         fill
-                        className='rounded-[50%] cursor-pointer hover:opacity-95'
+                        className="rounded-[50%] cursor-pointer hover:opacity-95"
                     />
                 </div>
             </Link>
-            <div className='ml-4'>
+            <div className="ml-4">
                 <Link href={"/profile/" + user.id}>
-                    <p className='text-xs lg:text-sm desktop:text-base font-semibold text-debian-red cursor-pointer hover:underline !leading-8 lg:!leading-10'>
+                    <p className="text-xs lg:text-sm desktop:text-base font-semibold text-debian-red cursor-pointer hover:underline !leading-8 lg:!leading-10">
                         {user.firstName} {user.lastName}
                     </p>
                 </Link>
@@ -140,18 +140,18 @@ function User({
                         " text-[0.6rem] md:text-[0.7rem] lg:text-xs"
                     }
                 >
-                    <span className='hover:font-medium cursor-pointer'>
+                    <span className="hover:font-medium cursor-pointer">
                         {formatCompactNumber(user.followerCount)} Followers
                     </span>
-                    <span className='ml-3 hover:font-medium cursor-pointer'>
+                    <span className="ml-3 hover:font-medium cursor-pointer">
                         {formatCompactNumber(user.followingCount)} Following
                     </span>
                 </div>
             </div>
 
-            <div className='h-full ml-auto self-center'>
+            <div className="h-full ml-auto self-center">
                 <button
-                    className='text-xs lg:text-sm desktop:text-base bg-debian-red border-2 hover:border-gray-600 py-[0.4rem] md:py-2 px-2 md:px-3 lg:px-4 rounded-[15px] text-white font-bold'
+                    className="text-xs lg:text-sm desktop:text-base bg-debian-red border-2 hover:border-gray-600 py-[0.4rem] md:py-2 px-2 md:px-3 lg:px-4 rounded-[15px] text-white font-bold"
                     onClick={() => {
                         onToggleFollow(user.id);
                         console.log("hi" + user.id);
