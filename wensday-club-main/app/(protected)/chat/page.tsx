@@ -87,8 +87,8 @@ export default function Page() {
 
 function Chat({ onClick }: { onClick: (id: string) => void }) {
     return (
-        <div className="w-[935px] max-[1000px] min-w-[650px] mx-[110px] mt-5">
-            <p className="text-2xl mb-2">Chat</p>
+        <div className="w-4/5 max-w-[900px] min-w-[650px] mx-auto mt-5">
+            <p className="text-2xl font-bold mb-2">Chat</p>
             <div className="w-full">
                 <User onClick={(id) => onClick(id)} id="some ID" />
                 <User onClick={(id) => onClick(id)} id="some ID" />
@@ -148,18 +148,9 @@ function InsideChat({ onExit }: { onExit: () => void }) {
                                 />
                             </div>
 
-<<<<<<< HEAD
                             <div className="ml-3">
                                 <a className="" href="/profile">
-                                    <p className="font-semibold text-xs sm:text-sm md:text-md lg:text-base desktop:text-xl">
-=======
-                            <div className='ml-3'>
-                                <a className='' href='/profile'>
-                                    <p className='font-semibold text-xs sm:text-sm md:text-base desktop:text-xl'>
-<<<<<<< HEAD
->>>>>>> bc5335d3f9d922e4d1ef1b60c26cf2f454495db1
-=======
->>>>>>> bc5335d3f9d922e4d1ef1b60c26cf2f454495db1
+                                    <p className="font-semibold text-xs sm:text-sm md:text-base desktop:text-xl">
                                         Bunlong Prak
                                     </p>
                                 </a>
@@ -252,40 +243,22 @@ function InsideChat({ onExit }: { onExit: () => void }) {
 function User({ onClick, id }: { onClick: (id: string) => void; id: string }) {
     return (
         <div
-            className="w-[935px] border-2 border-gray-500 mt-2 grid grid-cols-[15%_auto_15%] items-center cursor-pointer rounded-lg py-2 hover:bg-gray-100"
+            className="w-full border-2 border-gray-500 mt-[0.1rem] grid grid-cols-[15%_auto_15%] items-center cursor-pointer rounded-lg py-2 hover:bg-gray-100"
             onClick={() => onClick(id)}
         >
             <div className="mx-auto">
                 <img
                     src="Olivier_1500_Trptch.jpg"
                     alt="profile picture"
-                    className="rounded-[50%] w-[5rem] h-[4rem] lg:h-[5rem] desktop:h-[5rem] aspect-square object-cover"
+                    className="rounded-[50%] h-[4rem] lg:h-[4.5rem] desktop:h-[4rem] aspect-square object-cover"
                 />
             </div>
-<<<<<<< HEAD
-<<<<<<< HEAD
-            <div className="truncate pr-10">
-                <p className="text-sm lg:text-sm desktop:text-base font-semibold text-debian-red cursor-pointer hover:underline !leading-8 lg:!leading-10 mb-1">
+            <div className="truncate">
+                <p className="text-debian-red text-xs sm:text-sm md:text-base desktop:text-xl mb-[0.2rem] lg:mb-[0.15rem] desktop:mb-[0.2rem]">
                     Bunlong Prank
                 </p>
                 {/* for some reason, the display must be inline in order for "truncate to work" */}
-                <p className="inline text-[0.5rem] sm:text-xs md:text-sm lg:text-md desktop:text-lg">
-=======
-            <div className='truncate'>
-                <p className='text-debian-red text-xs sm:text-sm md:text-base desktop:text-xl mb-[0.2rem] lg:mb-[0.15rem] desktop:mb-[0.2rem]'>
-                    Bunlong Prank
-                </p>
-                {/* for some reason, the display must be inline in order for "truncate to work" */}
-                <p className='inline text-[0.5rem] sm:text-xs md:text-sm lg:text-base desktop:text-lg'>
->>>>>>> bc5335d3f9d922e4d1ef1b60c26cf2f454495db1
-=======
-            <div className='truncate'>
-                <p className='text-debian-red text-xs sm:text-sm md:text-base desktop:text-xl mb-[0.2rem] lg:mb-[0.15rem] desktop:mb-[0.2rem]'>
-                    Bunlong Prank
-                </p>
-                {/* for some reason, the display must be inline in order for "truncate to work" */}
-                <p className='inline text-[0.5rem] sm:text-xs md:text-sm lg:text-base desktop:text-lg'>
->>>>>>> bc5335d3f9d922e4d1ef1b60c26cf2f454495db1
+                <p className="inline text-[0.5rem] sm:text-xs md:text-sm lg:text-base desktop:text-lg">
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit.
                     Cum fuga similique modi ad assumenda veritatis doloribus id
                     harum. Ipsam, consequatur itaque.
